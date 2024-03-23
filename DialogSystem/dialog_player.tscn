@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck5buu2hf4kbd"]
+
+[ext_resource type="Script" path="res://DialogSystem/dialog_player.gd" id="1_h26oi"]
+[ext_resource type="Texture2D" uid="uid://mfvbexo7hn8b" path="res://Assets/dialogue-box-sample.png" id="1_wc0hk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_voq5b"]
+font_size = 64
+
+[node name="DialogPlayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_h26oi")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -22.0
+offset_top = -42.0
+offset_right = 1129.0
+offset_bottom = 821.25
+texture = ExtResource("1_wc0hk")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="TextLabel" type="Label" parent="."]
+offset_left = 153.0
+offset_top = 405.0
+offset_right = 1034.0
+offset_bottom = 602.0
+label_settings = SubResource("LabelSettings_voq5b")
+autowrap_mode = 3

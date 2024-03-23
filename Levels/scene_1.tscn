@@ -1,18 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdhddcnihylgl"]
+[gd_scene load_steps=7 format=3 uid="uid://bdhddcnihylgl"]
 
-[ext_resource type="Texture2D" uid="uid://dgj5rr2hrdfx6" path="res://icon.svg" id="1_kfrpn"]
+[ext_resource type="Texture2D" uid="uid://dgj5rr2hrdfx6" path="res://Assets/icon.svg" id="1_kfrpn"]
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://Characters/player_character.tscn" id="2_s4b3m"]
+[ext_resource type="PackedScene" uid="uid://d3tetmsy6ira5" path="res://DialogSystem/dialog_area.tscn" id="3_lj0rt"]
+[ext_resource type="PackedScene" uid="uid://ck5buu2hf4kbd" path="res://DialogSystem/dialog_player.tscn" id="4_e58ph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_en6yv"]
-size = Vector2(124, 124)
+size = Vector2(1978, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4537"]
+size = Vector2(164, 192)
 
 [node name="Scene1" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(74, 576)
+position = Vector2(245, 168)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3, -2)
+position = Vector2(567, -2)
 shape = SubResource("RectangleShape2D_en6yv")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
@@ -21,3 +26,25 @@ scale = Vector2(15.5078, 1)
 texture = ExtResource("1_kfrpn")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_s4b3m")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCharacter"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DialogAreaDoor" parent="." instance=ExtResource("3_lj0rt")]
+position = Vector2(473, -1)
+dialog_key = "npc1"
+
+[node name="CollisionShape2D" parent="DialogAreaDoor" index="0"]
+shape = SubResource("RectangleShape2D_k4537")
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogAreaDoor"]
+position = Vector2(-3.8147e-06, -1)
+scale = Vector2(1.27344, 1.5)
+texture = ExtResource("1_kfrpn")
+
+[node name="DialogPlayer" parent="." instance=ExtResource("4_e58ph")]
+scene_text_file = "res://Assets/dialogue.json"
+
+[editable path="DialogAreaDoor"]
