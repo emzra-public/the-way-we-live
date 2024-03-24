@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdhddcnihylgl"]
+
+[ext_resource type="PackedScene" uid="uid://ck5buu2hf4kbd" path="res://components/InteractDialogCanvas.tscn" id="1_somg4"]
+[ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="2_brqwi"]
+[ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://assets/placeholder-floor.png" id="3_fdw0o"]
+[ext_resource type="PackedScene" uid="uid://d3tetmsy6ira5" path="res://components/InteractPoint.tscn" id="4_nrrpi"]
+[ext_resource type="Texture2D" uid="uid://3ypq7k0civen" path="res://assets/placeholder-npc.png" id="5_vnkoj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_en6yv"]
+size = Vector2(4707, 237)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4537"]
+size = Vector2(185, 476)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ob2h1"]
+size = Vector2(612, 341)
+
+[node name="Scene1" type="Node2D"]
+
+[node name="DialogPlayer" parent="." instance=ExtResource("1_somg4")]
+all_text_file = "res://Assets/dialogue.json"
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_brqwi")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCharacter"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(245, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(439.5, 103.5)
+shape = SubResource("RectangleShape2D_en6yv")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(384, -114)
+scale = Vector2(4.69091, 0.960069)
+texture = ExtResource("3_fdw0o")
+
+[node name="InteractPoint_DialogFarmer" parent="." instance=ExtResource("4_nrrpi")]
+position = Vector2(473, -1)
+type = "Dialog"
+dialog_key = "first"
+
+[node name="CollisionShape2D" parent="InteractPoint_DialogFarmer" index="0"]
+position = Vector2(-2.5, 2)
+shape = SubResource("RectangleShape2D_k4537")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractPoint_DialogFarmer"]
+position = Vector2(-2, 0.999992)
+scale = Vector2(1.27344, 1.5)
+texture = ExtResource("5_vnkoj")
+
+[node name="InteractPoint_TransferTo2" parent="." instance=ExtResource("4_nrrpi")]
+type = "Transfer"
+transfer_scene_file = "res://Level2.tscn"
+
+[node name="CollisionShape2D" parent="InteractPoint_TransferTo2" index="0"]
+position = Vector2(1348, -10)
+shape = SubResource("RectangleShape2D_ob2h1")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractPoint_TransferTo2"]
+position = Vector2(1346.5, 21)
+scale = Vector2(0.600586, 1)
+texture = ExtResource("3_fdw0o")
+
+[editable path="InteractPoint_DialogFarmer"]
+[editable path="InteractPoint_TransferTo2"]

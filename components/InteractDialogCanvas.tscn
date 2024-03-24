@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://ck5buu2hf4kbd"]
 
-[ext_resource type="Script" path="res://DialogSystem/dialog_player.gd" id="1_h26oi"]
-[ext_resource type="Texture2D" uid="uid://mfvbexo7hn8b" path="res://Assets/dialogue-box-sample.png" id="1_wc0hk"]
+[ext_resource type="Script" path="res://components/InteractDialogCanvas.tscn.gd" id="1_h26oi"]
+[ext_resource type="Texture2D" uid="uid://mfvbexo7hn8b" path="res://assets/dialogue-box-sample.png" id="1_wc0hk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_voq5b"]
 font_size = 64
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvq4y"]
 
-[node name="DialogPlayer" type="CanvasLayer"]
+[node name="InteractDialogCanvas" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_h26oi")
 

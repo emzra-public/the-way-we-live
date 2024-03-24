@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="cmgg-24-team-1"
-run/main_scene="res://Levels/start.tscn"
+run/main_scene="res://MenuStart.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://Assets/icon.svg"
+config/icon="res://assets/icon.svg"
 
 [autoload]
 
-DialogBus="*res://DialogSystem/DialogBus.gd"
-PlayerKarma="*res://PlayerKarma.gd"
+G_Interact="*res://components/Interact_globals.gd"
+G_Player="*res://components/Player_globals.gd"
 
 [editor]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3tetmsy6ira5"]
 
-[ext_resource type="Script" path="res://DialogSystem/dialog_area.gd" id="1_vq310"]
+[ext_resource type="Script" path="res://components/InteractPoint.tscn.gd" id="1_vq310"]
 
-[node name="DialogArea" type="Area2D"]
+[node name="InteractPoint" type="Area2D"]
 process_mode = 3
 collision_layer = 0
 collision_mask = 2

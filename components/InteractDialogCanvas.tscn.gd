@@ -21,7 +21,7 @@ func _ready():
 	if FileAccess.file_exists(all_text_file):
 		var file = FileAccess.open(all_text_file, FileAccess.READ)
 		all_text = JSON.parse_string(file.get_as_text())
-	DialogBus.display_dialog.connect(on_display_dialog)
+	G_Interact.DIALOG.connect(on_display_dialog)
 
 func on_display_dialog(text_key = null):
 	if visible != true and text_key:
@@ -43,7 +43,7 @@ func on_display_dialog(text_key = null):
 			set_current_block(all_text[current_line.trim_prefix("@")])
 			on_display_dialog()
 		elif (current_line.begins_with("$")):
-			var command = Callable(PlayerKarma, current_line.trim_prefix("$"))
+			var command = Callable(G_Player, current_line.trim_prefix("$"))
 			command.call()
 			on_display_dialog()
 		else:

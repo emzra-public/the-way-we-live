@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp0m0cetwtwih"]
+
+[ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://assets/placeholder-floor.png" id="1_06kh4"]
+[ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="3_jxpss"]
+[ext_resource type="PackedScene" uid="uid://d3tetmsy6ira5" path="res://components/InteractPoint.tscn" id="3_x04tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi7jl"]
+size = Vector2(254, 528)
+
+[node name="Scene2" type="Node2D"]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("3_jxpss")]
+position = Vector2(451, 282)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(831, 362.5)
+scale = Vector2(1.61523, 1.01215)
+texture = ExtResource("1_06kh4")
+
+[node name="InteractPoint" parent="." instance=ExtResource("3_x04tw")]
+type = "Transfer"
+transfer_scene_file = "res://Level1.tscn"
+
+[node name="CollisionShape2D" parent="InteractPoint" index="0"]
+position = Vector2(128, 278)
+shape = SubResource("RectangleShape2D_vi7jl")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractPoint"]
+position = Vector2(129, 349)
+scale = Vector2(0.251953, 1)
+texture = ExtResource("1_06kh4")
+
+[editable path="InteractPoint"]

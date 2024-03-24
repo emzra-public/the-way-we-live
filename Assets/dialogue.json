@@ -9,10 +9,10 @@
 	],
 	"second": [
 		"this is a",
-		"$increase_stole"
+		"$increase_player_strength"
 	],
 	"third": [
 		"this is b",
-		"$increase_helped"
+		"$increase_boss_strength"
 	]
 }
