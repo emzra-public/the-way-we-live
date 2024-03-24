@@ -5,6 +5,7 @@ extends CanvasLayer
 var all_text = {}
 var current_block = []
 var in_progress = false
+var dialog_locked = false
 
 @onready var background = $Background
 @onready var text_label = $TextLabel
@@ -22,23 +23,17 @@ func _ready():
 		all_text = JSON.parse_string(file.get_as_text())
 	DialogBus.display_dialog.connect(on_display_dialog)
 
-func on_display_dialog(text_key):
-	set_current_block(all_text[text_key])
-	show_text()
-
-func set_current_block(block):
-	current_block = block.duplicate()
-	if typeof(current_block) != TYPE_ARRAY:  # normalize to array
-		current_block = [current_block]
-
-func show_text():
-	if visible != true:
+func on_display_dialog(text_key = null):
+	if visible != true and text_key:
+		set_current_block(all_text[text_key])
 		get_tree().paused = true
 		visible = true
 	if current_block.size() == 0:
 		visible = false
 		text_label.text = ""
 		get_tree().paused = false
+		return
+	if dialog_locked == true:
 		return
 
 	var current_line = current_block.pop_front()
@@ -47,26 +42,32 @@ func show_text():
 		show_textline(current_line)
 
 	elif typeof(current_line) == TYPE_DICTIONARY:
+		dialog_locked = true
 		show_choices(current_line.keys(), current_line.values())
+
+func set_current_block(block):
+	current_block = block
+	if typeof(current_block) != TYPE_ARRAY:  # normalize to array
+		current_block = [block]
+	current_block = current_block.duplicate()
 
 func show_textline(current_line):
 	text_label.text = current_line
 
-func show_choices(choices: Array[String], responses: Array):
-	while choices_list.get_child_count() > 1:
+func show_choices(choices: Array, responses: Array):
+	while choices_list.get_child_count() > 1:  # first reset all options
 		var button = choices_list.get_child(choices_list.get_child_count() - 1)
 		choices_list.remove_child(button)
 		button.queue_free()
-	
+
 	for i in range(choices.size()):
-		if (i == 0):
-			choices_list.get_child(0).text = choices[i]
-		else:
+		if i != 0:
 			choices_list.add_child(choices_prefab.duplicate())
-			choices_list.get_child(i).text = choices[i]
-			choices_list.get_child(i).pressed.connect(show_choices_callback.bind(responses[i]))
+		choices_list.get_child(i).text = choices[i]
+		choices_list.get_child(i).pressed.connect(show_choices_on_choice.bind(responses[i]))
 	choices_dialog.visible = true
-func show_choices_callback(response):
+func show_choices_on_choice(response):
 	choices_dialog.visible = false
+	dialog_locked = false
 	set_current_block(response)
-	show_text()
+	on_display_dialog()
