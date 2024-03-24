@@ -39,7 +39,15 @@ func on_display_dialog(text_key = null):
 	var current_line = current_block.pop_front()
 
 	if typeof(current_line) == TYPE_STRING:
-		show_textline(current_line)
+		if (current_line.begins_with("@")):
+			set_current_block(all_text[current_line.trim_prefix("@")])
+			on_display_dialog()
+		elif (current_line.begins_with("$")):
+			var command = Callable(PlayerKarma, current_line.trim_prefix("$"))
+			command.call()
+			on_display_dialog()
+		else:
+			show_textline(current_line)
 
 	elif typeof(current_line) == TYPE_DICTIONARY:
 		dialog_locked = true
@@ -59,6 +67,8 @@ func show_choices(choices: Array, responses: Array):
 		var button = choices_list.get_child(choices_list.get_child_count() - 1)
 		choices_list.remove_child(button)
 		button.queue_free()
+	for connection in choices_list.get_child(0).pressed.get_connections():
+		choices_list.get_child(0).pressed.disconnect(connection["callable"])
 
 	for i in range(choices.size()):
 		if i != 0:
