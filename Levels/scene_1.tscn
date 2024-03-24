@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdhddcnihylgl"]
+[gd_scene load_steps=8 format=3 uid="uid://bdhddcnihylgl"]
 
-[ext_resource type="Texture2D" uid="uid://dgj5rr2hrdfx6" path="res://Assets/icon.svg" id="1_kfrpn"]
+[ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://Assets/placeholder-floor.png" id="1_ouuvl"]
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://Characters/player_character.tscn" id="2_s4b3m"]
 [ext_resource type="PackedScene" uid="uid://d3tetmsy6ira5" path="res://DialogSystem/dialog_area.tscn" id="3_lj0rt"]
+[ext_resource type="Texture2D" uid="uid://3ypq7k0civen" path="res://Assets/placeholder-npc.png" id="4_0a4u6"]
 [ext_resource type="PackedScene" uid="uid://ck5buu2hf4kbd" path="res://DialogSystem/dialog_player.tscn" id="4_e58ph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_en6yv"]
-size = Vector2(1978, 124)
+size = Vector2(4707, 237)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4537"]
 size = Vector2(164, 192)
@@ -17,13 +18,13 @@ size = Vector2(164, 192)
 position = Vector2(245, 168)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(567, -2)
+position = Vector2(439.5, 103.5)
 shape = SubResource("RectangleShape2D_en6yv")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(559.5, -1)
-scale = Vector2(15.5078, 1)
-texture = ExtResource("1_kfrpn")
+position = Vector2(384, -114)
+scale = Vector2(4.69091, 0.960069)
+texture = ExtResource("1_ouuvl")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_s4b3m")]
 
@@ -42,7 +43,7 @@ shape = SubResource("RectangleShape2D_k4537")
 [node name="Sprite2D" type="Sprite2D" parent="DialogAreaDoor"]
 position = Vector2(-3.8147e-06, -1)
 scale = Vector2(1.27344, 1.5)
-texture = ExtResource("1_kfrpn")
+texture = ExtResource("4_0a4u6")
 
 [node name="DialogPlayer" parent="." instance=ExtResource("4_e58ph")]
 all_text_file = "res://Assets/dialogue.json"
