@@ -18,6 +18,7 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 DialogBus="*res://DialogSystem/DialogBus.gd"
+PlayerKarma="*res://PlayerKarma.gd"
 
 [editor]
 

@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck5buu2hf4kbd"]
+[gd_scene load_steps=6 format=3 uid="uid://ck5buu2hf4kbd"]
 
 [ext_resource type="Script" path="res://DialogSystem/dialog_player.gd" id="1_h26oi"]
 [ext_resource type="Texture2D" uid="uid://mfvbexo7hn8b" path="res://Assets/dialogue-box-sample.png" id="1_wc0hk"]
+[ext_resource type="Script" path="res://DialogSystem/ChoicesDialog.gd" id="3_cbhat"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_voq5b"]
 font_size = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvq4y"]
 
 [node name="DialogPlayer" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_h26oi")
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 offset_left = -22.0
 offset_top = -42.0
 offset_right = 1129.0
@@ -26,3 +30,20 @@ offset_right = 1034.0
 offset_bottom = 602.0
 label_settings = SubResource("LabelSettings_voq5b")
 autowrap_mode = 3
+
+[node name="ChoicesDialog" type="PanelContainer" parent="."]
+offset_left = 149.0
+offset_top = 403.0
+offset_right = 1030.0
+offset_bottom = 594.0
+script = ExtResource("3_cbhat")
+
+[node name="MarginContainer" type="MarginContainer" parent="ChoicesDialog"]
+layout_mode = 2
+
+[node name="Choices" type="VBoxContainer" parent="ChoicesDialog/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ChoicesDialog/MarginContainer/Choices"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_vvq4y")

@@ -1,6 +1,6 @@
 {
 	"npc1": [
 		"hi",
-		"bye"
-	]
+		"bye",
+		"$$player steal go up"
 }
