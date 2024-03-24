@@ -1,16 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdhddcnihylgl"]
+[gd_scene load_steps=10 format=3 uid="uid://bdhddcnihylgl"]
 
 [ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://Assets/placeholder-floor.png" id="1_ouuvl"]
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://Characters/player_character.tscn" id="2_s4b3m"]
 [ext_resource type="PackedScene" uid="uid://d3tetmsy6ira5" path="res://DialogSystem/dialog_area.tscn" id="3_lj0rt"]
 [ext_resource type="Texture2D" uid="uid://3ypq7k0civen" path="res://Assets/placeholder-npc.png" id="4_0a4u6"]
 [ext_resource type="PackedScene" uid="uid://ck5buu2hf4kbd" path="res://DialogSystem/dialog_player.tscn" id="4_e58ph"]
+[ext_resource type="Script" path="res://Levels/TransferArea.gd" id="6_x50bf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_en6yv"]
 size = Vector2(4707, 237)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4537"]
 size = Vector2(164, 192)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_00ohf"]
+radius = 510.005
 
 [node name="Scene1" type="Node2D"]
 
@@ -47,5 +51,16 @@ texture = ExtResource("4_0a4u6")
 
 [node name="DialogPlayer" parent="." instance=ExtResource("4_e58ph")]
 all_text_file = "res://Assets/dialogue.json"
+
+[node name="TransferArea" type="Area2D" parent="."]
+position = Vector2(2756, 159)
+script = ExtResource("6_x50bf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransferArea"]
+position = Vector2(19, 7)
+shape = SubResource("CircleShape2D_00ohf")
+
+[connection signal="body_entered" from="TransferArea" to="TransferArea" method="_on_body_entered"]
+[connection signal="body_exited" from="TransferArea" to="TransferArea" method="_on_body_exited"]
 
 [editable path="DialogAreaDoor"]

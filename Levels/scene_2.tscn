@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp0m0cetwtwih"]
+
+[ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://Assets/placeholder-floor.png" id="1_06kh4"]
+[ext_resource type="Script" path="res://Levels/TransferAreaToScene1.gd" id="2_v4juq"]
+[ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://Characters/player_character.tscn" id="3_jxpss"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3jnns"]
+radius = 366.35
+
+[node name="Scene2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(831, 362.5)
+scale = Vector2(1.61523, 1.01215)
+texture = ExtResource("1_06kh4")
+
+[node name="TransferAreaToScene1" type="Area2D" parent="."]
+script = ExtResource("2_v4juq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransferAreaToScene1"]
+position = Vector2(47, 429)
+shape = SubResource("CircleShape2D_3jnns")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("3_jxpss")]
+position = Vector2(123, 339)
+
+[connection signal="body_entered" from="TransferAreaToScene1" to="TransferAreaToScene1" method="_on_body_entered"]
+[connection signal="body_exited" from="TransferAreaToScene1" to="TransferAreaToScene1" method="_on_body_exited"]

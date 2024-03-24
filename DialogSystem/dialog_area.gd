@@ -12,3 +12,4 @@ func _on_area_entered(area):
 
 func _on_area_exited(area):
 	area_active = false
+
