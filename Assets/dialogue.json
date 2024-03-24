@@ -1,6 +1,18 @@
 {
-	"npc1": [
+	"first": [
 		"hi",
-		"bye",
-		"$$player steal go up"
+		"pick some options now",
+		{
+			"option a": "@second",
+			"option b": "@third"
+		}
+	],
+	"second": [
+		"this is a",
+		"$increase_stole"
+	],
+	"third": [
+		"this is b",
+		"$increase_helped"
+	]
 }
