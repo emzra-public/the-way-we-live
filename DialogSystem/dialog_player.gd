@@ -28,12 +28,12 @@ func on_display_dialog(text_key = null):
 		set_current_block(all_text[text_key])
 		get_tree().paused = true
 		visible = true
+	if dialog_locked == true:
+		return
 	if current_block.size() == 0:
 		visible = false
 		text_label.text = ""
 		get_tree().paused = false
-		return
-	if dialog_locked == true:
 		return
 
 	var current_line = current_block.pop_front()
