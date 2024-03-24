@@ -31,3 +31,8 @@ func initButtons():
 func onChoice(choice_index):
 	visible = false
 	SELECTED.emit(choice_index)
+	if choice_index == 2:  # Assuming option 2 increases karma
+		PlayerKarma.increase_karma()
+	elif choice_index == 3:  # Assuming option 3 increases stole
+		PlayerKarma.increase_stole()
+	
