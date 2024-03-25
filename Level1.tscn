@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://3ypq7k0civen" path="res://assets/placeholder-npc.png" id="5_vnkoj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_en6yv"]
-size = Vector2(4707, 237)
+size = Vector2(4797.5, 237)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4537"]
-size = Vector2(185, 476)
+size = Vector2(513, 282)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob2h1"]
 size = Vector2(612, 341)
@@ -21,14 +21,13 @@ size = Vector2(612, 341)
 all_text_file = "res://Assets/dialogue.json"
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_brqwi")]
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCharacter"]
+position = Vector2(1, -712)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(245, 168)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(439.5, 103.5)
+position = Vector2(386.75, 96)
 shape = SubResource("RectangleShape2D_en6yv")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
@@ -52,7 +51,7 @@ texture = ExtResource("5_vnkoj")
 
 [node name="InteractPoint_TransferTo2" parent="." instance=ExtResource("4_nrrpi")]
 type = "Transfer"
-transfer_scene_file = "res://Level2.tscn"
+transfer_scene_file = "res://Level3.tscn"
 
 [node name="CollisionShape2D" parent="InteractPoint_TransferTo2" index="0"]
 position = Vector2(1348, -10)

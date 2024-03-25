@@ -1,30 +1,22 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 100
+var speed = 300.0
+var jump_speed = -400.0
 
-const MAX_SPEED = 300
-const ACCEL = 1500
-const FRICTION = 1200
+# Get the gravity from the project settings so you can sync with rigid body nodes.
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 
 func _physics_process(delta):
-	var input = Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
-	).normalized()
-		
-	if input == Vector2.ZERO:
-		apply_friction(FRICTION * delta)
-	else:
-		apply_movement(input * ACCEL * delta)
+	# Add the gravity.
+	velocity.y += gravity * delta
+
+	# Handle Jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = jump_speed
+
+	# Get the input direction.
+	var direction = Input.get_axis("move_left", "move_right")
+	velocity.x = direction * speed
 
 	move_and_slide()
-
-func apply_friction(amount):
-	if velocity.length() > amount:
-		velocity -= velocity.normalized() * amount
-	else:
-		velocity = Vector2.ZERO
-
-func apply_movement(movement):
-	velocity += movement
-	velocity = velocity.limit_length(MAX_SPEED)
