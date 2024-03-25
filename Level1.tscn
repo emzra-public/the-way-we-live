@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="2_brqwi"]
 [ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://assets/placeholder-floor.png" id="3_fdw0o"]
 [ext_resource type="PackedScene" uid="uid://d3tetmsy6ira5" path="res://components/InteractPoint.tscn" id="4_nrrpi"]
-[ext_resource type="Texture2D" uid="uid://3ypq7k0civen" path="res://assets/placeholder-npc.png" id="5_vnkoj"]
+[ext_resource type="PackedScene" uid="uid://bslrbnyuw2rvm" path="res://components/NPCharacter.tscn" id="4_xcvac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_en6yv"]
 size = Vector2(4797.5, 237)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4537"]
-size = Vector2(513, 282)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f63s"]
+size = Vector2(504, 284)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob2h1"]
 size = Vector2(612, 341)
@@ -35,19 +35,11 @@ position = Vector2(384, -114)
 scale = Vector2(4.69091, 0.960069)
 texture = ExtResource("3_fdw0o")
 
-[node name="InteractPoint_DialogFarmer" parent="." instance=ExtResource("4_nrrpi")]
-position = Vector2(473, -1)
-type = "Dialog"
-dialog_key = "first"
+[node name="NPCharacter" parent="." instance=ExtResource("4_xcvac")]
+position = Vector2(609, 3)
 
-[node name="CollisionShape2D" parent="InteractPoint_DialogFarmer" index="0"]
-position = Vector2(-2.5, 2)
-shape = SubResource("RectangleShape2D_k4537")
-
-[node name="Sprite2D" type="Sprite2D" parent="InteractPoint_DialogFarmer"]
-position = Vector2(-2, 0.999992)
-scale = Vector2(1.27344, 1.5)
-texture = ExtResource("5_vnkoj")
+[node name="CollisionShape2D" parent="NPCharacter/InteractPoint" index="0"]
+shape = SubResource("RectangleShape2D_4f63s")
 
 [node name="InteractPoint_TransferTo2" parent="." instance=ExtResource("4_nrrpi")]
 type = "Transfer"
@@ -62,5 +54,6 @@ position = Vector2(1346.5, 21)
 scale = Vector2(0.600586, 1)
 texture = ExtResource("3_fdw0o")
 
-[editable path="InteractPoint_DialogFarmer"]
+[editable path="NPCharacter"]
+[editable path="NPCharacter/InteractPoint"]
 [editable path="InteractPoint_TransferTo2"]
