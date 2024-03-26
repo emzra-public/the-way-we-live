@@ -1,43 +1,56 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdhddcnihylgl"]
+[gd_scene load_steps=9 format=3 uid="uid://bdhddcnihylgl"]
 
+[ext_resource type="Texture2D" uid="uid://b8csanymp5vpp" path="res://assets/farm-background.png" id="1_fqrgj"]
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="2_brqwi"]
+[ext_resource type="Texture2D" uid="uid://dqdp41tci4k4j" path="res://assets/farm-midandforegreound.png" id="2_owju7"]
 [ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://assets/placeholder-floor.png" id="3_fdw0o"]
 [ext_resource type="PackedScene" uid="uid://d3tetmsy6ira5" path="res://components/InteractPoint.tscn" id="4_nrrpi"]
 [ext_resource type="PackedScene" uid="uid://bslrbnyuw2rvm" path="res://components/NPCharacter.tscn" id="4_xcvac"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_en6yv"]
-size = Vector2(4797.5, 237)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f63s"]
 size = Vector2(504, 284)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob2h1"]
-size = Vector2(612, 341)
+size = Vector2(196, 341)
 
 [node name="Scene1" type="Node2D"]
 
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+visible = false
+position = Vector2(-4, -7)
+polygon = PackedVector2Array(-1560, -672, -1497.84, 358.056, -1069, -695, -1066, 241, -518, 248, -92, 117, 957, 115, 1304, -104, 1589, -97, 1585, 584, -1617, 577)
+
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_brqwi")]
-position = Vector2(1, -712)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(245, 168)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(386.75, 96)
-shape = SubResource("RectangleShape2D_en6yv")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(384, -114)
-scale = Vector2(4.69091, 0.960069)
-texture = ExtResource("3_fdw0o")
+position = Vector2(-980, -196)
 
 [node name="NPCharacter" parent="." instance=ExtResource("4_xcvac")]
-position = Vector2(609, 3)
+position = Vector2(90, 1)
 
 [node name="CollisionShape2D" parent="NPCharacter/InteractPoint" index="0"]
 shape = SubResource("RectangleShape2D_4f63s")
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_fqrgj")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = 2
+z_as_relative = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_owju7")
+
 [node name="InteractPoint_TransferTo2" parent="." instance=ExtResource("4_nrrpi")]
+position = Vector2(-402, 17)
 type = "Transfer"
 transfer_scene_file = "res://Level3.tscn"
 
@@ -46,8 +59,8 @@ position = Vector2(1348, -10)
 shape = SubResource("RectangleShape2D_ob2h1")
 
 [node name="Sprite2D" type="Sprite2D" parent="InteractPoint_TransferTo2"]
-position = Vector2(1346.5, 21)
-scale = Vector2(0.600586, 1)
+position = Vector2(1349, -7)
+scale = Vector2(0.196289, 0.597332)
 texture = ExtResource("3_fdw0o")
 
 [editable path="NPCharacter"]
