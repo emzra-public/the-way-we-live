@@ -65,7 +65,7 @@ shape = SubResource("RectangleShape2D_4f63s")
 [node name="InteractPoint_TransferTo2" parent="." instance=ExtResource("4_nrrpi")]
 position = Vector2(1031, 793)
 type = "Transfer"
-transfer_scene_file = "res://Level3.tscn"
+transfer_scene_file = "res://Level2.tscn"
 
 [node name="CollisionShape2D" parent="InteractPoint_TransferTo2" index="0"]
 position = Vector2(1338, -17.5)

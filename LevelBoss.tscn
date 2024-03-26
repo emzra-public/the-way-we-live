@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0v3l8f7xve6s"]
+[gd_scene load_steps=6 format=3 uid="uid://dl5c8eg8i4qvn"]
 
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="1_gjney"]
-[ext_resource type="Texture2D" uid="uid://b5cpqci80d1gd" path="res://assets/boss.jpg" id="2_0q6pm"]
+[ext_resource type="Texture2D" uid="uid://b5cpqci80d1gd" path="res://Assets/boss.jpg" id="2_0q6pm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlwo0"]
 size = Vector2(28.4513, 815.5)
