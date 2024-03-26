@@ -5,7 +5,7 @@ signal CHOSE_CHOICE(index)
 
 # karma
 var player_karma = 0
-var boss_karma = 0
+var round = 0
 
 func increase_player_karma():
 	player_karma += 1
@@ -54,36 +54,35 @@ func refuse_to_share_with_spirits():
 	spirits_refused_to_share_with = true
 
 func naraka():
-	return "@first"
+	return "first"
 
 func spirit():
 	if quest_accepted:
-		return "@sixth"
+		return "sixth"
 
 	elif quest_refused:
-		return "@seventh"
+		return "seventh"
 
 	elif stole_and_attacked:
-		return "@eighth" 
+		return "eighth" 
 
 func boss():
 	if spirits_encouraged:
-		return "@ninth"
+		return "ninth"
 	if spirits_discouraged:
-		return "@tenth"
+		return "tenth"
 	if spirits_told_truth:
-		return "@eleventh"
+		return "eleventh"
 	if spirits_lied_to:
-		return "@twelfth"
+		return "twelfth"
 	if spirits_lied_to_2:
-		return "@thirteenth"
+		return "thirteenth"
 	if spirits_refused_to_share_with:
-		return "@fourteenth"
+		return "fourteenth"
+	else:
+		return "ninth"
 
-func reset_globals():
-
-	player_karma = 0
-	boss_karma = 0
+#rebirth
 
 func reset_dialogue_variables():
 	quest_accepted = false
@@ -96,18 +95,9 @@ func reset_dialogue_variables():
 	spirits_lied_to_2 = false
 	spirits_refused_to_share_with = false
 	
-func restart_game():
-	reset_globals()
-	get_tree().change_scene_to_file("res://Levels/start.tscn")
-
 func rebirth():
 	reset_dialogue_variables()
-	get_tree().change_scene_to_file("res://Level1.tscn")
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://MenuStart.tscn")
 
-func arrived():
-	has_arrived = true
 
-func naraka():
-	if has_arrived:
-		return "first.2"
-	return "first"

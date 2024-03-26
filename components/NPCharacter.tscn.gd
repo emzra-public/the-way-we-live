@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var DialogBox = $DialogBox
-@onready var ChoicesBox = $ChoicesBox
 @onready var InteractPoint = $InteractPoint
 @onready var TooltipInteractableNow = $InteractPoint/TooltipInteractableNow
 
@@ -46,7 +45,8 @@ func on_display_dialog(text_key = null):
 		DialogBox.reset()
 		dialog_locked = false
 		InteractPoint.visible = true
-		get_tree().paused = false
+		if get_tree() != null:
+			get_tree().paused = false
 		return
 	var current_line = current_block.pop_front()
 

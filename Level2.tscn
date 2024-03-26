@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp0m0cetwtwih"]
+[gd_scene load_steps=9 format=3 uid="uid://bp0m0cetwtwih"]
 
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="1_bufxc"]
 [ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://Assets/placeholder-floor.png" id="2_3dsmv"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi7jl"]
 size = Vector2(167, 426)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s731x"]
+size = Vector2(218, 129)
 
 [node name="Scene2" type="Node2D"]
 
@@ -55,13 +58,31 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_3dsmv")
 
 [node name="NPCharacter" parent="." instance=ExtResource("6_rtocj")]
-position = Vector2(2192, 269)
+position = Vector2(2229, 291)
 
 [node name="InteractPoint" parent="NPCharacter" index="2"]
-position = Vector2(3, 3)
 dialog_key = "$spirit"
+
+[node name="CollisionShape2D" parent="NPCharacter/InteractPoint" index="0"]
+position = Vector2(-46, 54.5)
+shape = SubResource("RectangleShape2D_s731x")
+
+[node name="InteractPoint2" parent="." instance=ExtResource("3_xtwwu")]
+position = Vector2(2531, -23)
+type = "Transfer"
 transfer_scene_file = "res://LevelBoss.tscn"
+
+[node name="CollisionShape2D" parent="InteractPoint2" index="0"]
+position = Vector2(110.5, 255)
+shape = SubResource("RectangleShape2D_vi7jl")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractPoint2"]
+position = Vector2(119, 212)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_3dsmv")
 
 [editable path="InteractPoint"]
 [editable path="NPCharacter"]
+[editable path="NPCharacter/InteractPoint"]
 [editable path="NPCharacter/DialogBox"]
+[editable path="InteractPoint2"]
