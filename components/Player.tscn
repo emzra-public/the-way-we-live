@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bh4tsucf6r8pf" path="res://components/ChoicesBox.tscn" id="3_v1sd2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_binqq"]
-size = Vector2(209, 453)
+size = Vector2(129, 319)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wf6v"]
-size = Vector2(208, 454)
+size = Vector2(180, 319)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_djn0p")
@@ -16,10 +16,11 @@ script = ExtResource("1_djn0p")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_hyyh4")
 
 [node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
+position = Vector2(-0.5, -6.5)
 shape = SubResource("RectangleShape2D_binqq")
 
 [node name="PlayerInteractionArea" type="Area2D" parent="."]
@@ -27,6 +28,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="PlayerInteractionAreaCollisionShape2D" type="CollisionShape2D" parent="PlayerInteractionArea"]
+position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_6wf6v")
 
 [node name="ChoicesBox" parent="." instance=ExtResource("3_v1sd2")]
