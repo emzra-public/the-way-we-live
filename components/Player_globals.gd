@@ -21,3 +21,6 @@ func reset_globals():
 func restart_game():
 	reset_globals()
 	get_tree().change_scene_to_file("res://Levels/start.tscn")
+
+func rebirth():
+	get_tree().change_scene_to_file("res://Level1.tscn")

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cog5vc07s0ca1" path="res://assets/springs-foreground.png" id="5_yx1l0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi7jl"]
-size = Vector2(254, 528)
+size = Vector2(167, 426)
 
 [node name="Scene2" type="Node2D"]
 
@@ -38,19 +38,19 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_yx1l0")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_bufxc")]
-position = Vector2(451, 282)
+position = Vector2(441, 330)
 
 [node name="InteractPoint" parent="." instance=ExtResource("3_xtwwu")]
 type = "Transfer"
 transfer_scene_file = "res://Level1.tscn"
 
 [node name="CollisionShape2D" parent="InteractPoint" index="0"]
-position = Vector2(128, 278)
+position = Vector2(110.5, 255)
 shape = SubResource("RectangleShape2D_vi7jl")
 
 [node name="Sprite2D" type="Sprite2D" parent="InteractPoint"]
-position = Vector2(129, 349)
-scale = Vector2(0.251953, 1)
+position = Vector2(119, 212)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_3dsmv")
 
 [editable path="InteractPoint"]

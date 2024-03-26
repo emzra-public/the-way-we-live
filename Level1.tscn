@@ -11,56 +11,66 @@
 size = Vector2(504, 284)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob2h1"]
-size = Vector2(196, 341)
+size = Vector2(176, 541)
 
 [node name="Scene1" type="Node2D"]
+
+[node name="ParallaxForeground" type="ParallaxBackground" parent="."]
+layer = 0
+
+[node name="ParallaxGround" type="ParallaxLayer" parent="ParallaxForeground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxForeground/ParallaxGround"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_owju7")
+centered = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxClouds"]
+scale = Vector2(0.25, 0.25)
+centered = false
+
+[node name="ParallaxHill" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 481)
+motion_scale = Vector2(0.75, 0.75)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxHill"]
+position = Vector2(0, -167)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_fqrgj")
+centered = false
 
 [node name="Ground" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-visible = false
-position = Vector2(-4, -7)
-polygon = PackedVector2Array(-1560, -672, -1497.84, 358.056, -1069, -695, -1066, 241, -518, 248, -92, 117, 957, 115, 1304, -104, 1589, -97, 1585, 584, -1617, 577)
+position = Vector2(1556, 840)
+polygon = PackedVector2Array(-1548, -826, -1072, -847, -1069, -695, -1066, 241, -518, 248, -92, 117, 957, 115, 1304, -104, 1585, -911, 1575, 687, -1552, 677)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_brqwi")]
-position = Vector2(-980, -197)
+z_index = 1
+position = Vector2(592, 406)
 
 [node name="NPCharacter" parent="." instance=ExtResource("4_xcvac")]
-position = Vector2(90, 1)
+position = Vector2(1587, 804)
 
 [node name="CollisionShape2D" parent="NPCharacter/InteractPoint" index="0"]
 shape = SubResource("RectangleShape2D_4f63s")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(2560, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_fqrgj")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-z_index = 2
-z_as_relative = false
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_owju7")
-
 [node name="InteractPoint_TransferTo2" parent="." instance=ExtResource("4_nrrpi")]
-position = Vector2(-402, 17)
+position = Vector2(1031, 793)
 type = "Transfer"
 transfer_scene_file = "res://Level3.tscn"
 
 [node name="CollisionShape2D" parent="InteractPoint_TransferTo2" index="0"]
-position = Vector2(1348, -10)
+position = Vector2(1338, -17.5)
 shape = SubResource("RectangleShape2D_ob2h1")
 
 [node name="Sprite2D" type="Sprite2D" parent="InteractPoint_TransferTo2"]
-position = Vector2(1349, -7)
-scale = Vector2(0.196289, 0.597332)
+position = Vector2(1344, -113)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_fdw0o")
 
 [editable path="NPCharacter"]
