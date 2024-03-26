@@ -29,6 +29,6 @@ func show_text_display_letter():
 		return
 	label.text += text[letter]
 	letter += 1
-	timer.start(0.0309)
+	timer.start(0.005)
 func _on_letter_display_timer_timeout():
 	show_text_display_letter()

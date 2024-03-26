@@ -33,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_evekd")
 
-[node name="Choices" type="HBoxContainer" parent="."]
+[node name="Choices" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 16

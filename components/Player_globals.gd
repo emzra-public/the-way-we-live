@@ -5,6 +5,7 @@ signal CHOSE_CHOICE(index)
 
 var player_strength = 0
 var boss_strength = 0
+var has_arrived = false
 
 func increase_player_strength():
 	player_strength += 1
@@ -17,10 +18,18 @@ func increase_boss_strength():
 func reset_globals():
 	player_strength = 0
 	boss_strength = 0
-	
+
 func restart_game():
 	reset_globals()
 	get_tree().change_scene_to_file("res://Levels/start.tscn")
 
 func rebirth():
 	get_tree().change_scene_to_file("res://Level1.tscn")
+
+func arrived():
+	has_arrived = true
+
+func naraka():
+	if has_arrived:
+		return "first.2"
+	return "first"
