@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-var speed = 300.0
-var jump_speed = -400.0
+var MAX_SPEED = 700.0
+var speed = 50.0
+var jump_speed = -600.0
 
 # Get the gravity from the project settings so you can sync with rigid body nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = 1200
 
 
 func _physics_process(delta):
@@ -17,6 +18,17 @@ func _physics_process(delta):
 
 	# Get the input direction.
 	var direction = Input.get_axis("move_left", "move_right")
-	velocity.x = direction * speed
+	velocity.x += direction * speed
+	if velocity.x > 0:
+		$Sprite2D.flip_h = false
+	elif velocity.x < 0:
+		$Sprite2D.flip_h = true
+	if (velocity.x > MAX_SPEED):
+		velocity.x = MAX_SPEED
+	elif (velocity.x < -MAX_SPEED):
+		velocity.x = -MAX_SPEED
+	if velocity.is_zero_approx():
+		velocity.x = 0
+	velocity.x *= 0.93
 
 	move_and_slide()
