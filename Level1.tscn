@@ -23,7 +23,7 @@ position = Vector2(-4, -7)
 polygon = PackedVector2Array(-1560, -672, -1497.84, 358.056, -1069, -695, -1066, 241, -518, 248, -92, 117, 957, 115, 1304, -104, 1589, -97, 1585, 584, -1617, 577)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_brqwi")]
-position = Vector2(-980, -196)
+position = Vector2(-980, -197)
 
 [node name="NPCharacter" parent="." instance=ExtResource("4_xcvac")]
 position = Vector2(90, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp0m0cetwtwih"]
+[gd_scene load_steps=7 format=3 uid="uid://bp0m0cetwtwih"]
 
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="1_bufxc"]
 [ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://assets/placeholder-floor.png" id="2_3dsmv"]
@@ -6,28 +6,39 @@
 [ext_resource type="Texture2D" uid="uid://bijdq31bv5ynf" path="res://assets/springs-background.png" id="4_qpsac"]
 [ext_resource type="Texture2D" uid="uid://cog5vc07s0ca1" path="res://assets/springs-foreground.png" id="5_yx1l0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlwo0"]
-size = Vector2(47.906, 199)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi7jl"]
 size = Vector2(254, 528)
 
 [node name="Scene2" type="Node2D"]
 
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2(-4, -7)
+polygon = PackedVector2Array(-72, 469, 688, 477, 746, 569, 1134, 569, 1142, 597, 1212, 518, 1218, 587, 1217, 526, 1588, 526, 1602, 551, 1659, 472, 3060, 469, 3004, -538, 3250, -534, 3263, 740, -395, 668, -332, -603, -36, -555)
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(3117.4, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(486, 427)
+scale = Vector2(0.25, 0.241902)
+texture = ExtResource("4_qpsac")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+z_index = 2
+z_as_relative = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+position = Vector2(1497, 94)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_yx1l0")
+
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_bufxc")]
 position = Vector2(451, 282)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(831, 362.5)
-scale = Vector2(1.61523, 1.01215)
-texture = ExtResource("2_3dsmv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(831.9, 556.5)
-scale = Vector2(34.48, 1)
-shape = SubResource("RectangleShape2D_vlwo0")
 
 [node name="InteractPoint" parent="." instance=ExtResource("3_xtwwu")]
 type = "Transfer"
@@ -41,23 +52,5 @@ shape = SubResource("RectangleShape2D_vi7jl")
 position = Vector2(129, 349)
 scale = Vector2(0.251953, 1)
 texture = ExtResource("2_3dsmv")
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Background" type="ParallaxBackground" parent="Node2D"]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Node2D/Background"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Background/ParallaxLayer"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_qpsac")
-
-[node name="Foreground" type="ParallaxBackground" parent="Node2D"]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Node2D/Foreground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Foreground/ParallaxLayer"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_yx1l0")
 
 [editable path="InteractPoint"]
