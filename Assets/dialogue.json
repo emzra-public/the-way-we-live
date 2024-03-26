@@ -53,13 +53,13 @@
 		"The hike is long, but I am \n sure you are fit to do it.",
 		"Only then will I share the \n remnants of my food with you.",
 		{
-			"Accept quest": "$accepted_quest",
-			"Refuse quest and walk away": "$refused_quest",
-			"Attack Nāraka and steal their food": "$attack_and_steal"
+			"*Accept quest*": "$accepted_quest",
+			"*Refuse quest and walk away*": "$refused_quest",
+			"*Attack Nāraka and steal their food*": "$attack_and_steal"
 		}
 	],
 	"sixth": [
-		"This spring is ours!",
+		"You are not welcome here!",
 		"You are attempting to \n steal our water!",
 		"We really ought to steal back \n from the farmer instead!",
 		{
@@ -68,21 +68,35 @@
 		}
 	],
 	"seventh": [
-		"Who are you and what are \n you doing in our spring?",
-		"You better not try and steal \n any of our water like the others!",
+		"You are not welcome here!",
+		"For millennia we have guarded the \n last of this spring from thievery and destruction. \n We will not let you harm it!",
 		{
-			"Tell truth: wanderer": "$tell_truth_to_spirits" ,
-			"Lie: I know the farmer": "$lie_to_spirits"
-		}
+			"Please wait!":
+				{
+					"*Tell truth*": {
+						"I have just entered this world. \n I bear no ill will to you or the springs,\n and I wish to only pass by \n if you will allow me to.": "@tellTruth" ,
+						},
+					"*Lie to Save Yourself*": {
+						"I’ve been sent by the farmer to bring water for his crops." : {
+							"He had promised to share the remains of his crops, if you help, I can exchange some of the crops I receive for this water." : "@lie"
+						}
+					}
+				}
+			}
 	],
 	"eighth": [
-		"Who are you and what are \n you doing in our spring?",
-		"You better not try and steal \n any of our water like the others!", 
-		"Do you have any food?",
+		"For millennia we have guarded the last of this spring from thievery and destruction",
+		"...",
+		"We do not let humans enter our space, but wanderer… please hear our plea.",
+		"We are starving. Many travelers have come by, and many have done great harm that we can never recover from.",
+		"Our population is dwindling, and we need food.",
+		"Please… will you share your food with us?",
 		{
-			"Lie: I know farmer":  "$lie_to_spirits_2",
-			"Lie I refuse to share food with you" : "$refuse_to_share_with_spirits",
-		},
+					"*Agree to Help*": "@agreeToHelp",
+					"*Refuse to Share*": {
+						"I have limited food myself. I can only look out for myself. I will not give my food to you.": "@refuseToShare"
+					}
+			}
 	],
 	"ninth": [
 		"Good work. Next Realm.",
@@ -119,5 +133,47 @@
 		{
 			"Rebirth": "$rebirth"
 		}
+	],
+	"tellTruth": [
+		"Many travelers have come by, and many have done great harm that we can never recover from.",
+		"Humans and spirits will never trust each other. That is the way things go. Our history deems that we must end you now.",
+			"$tell_truth_to_spirits"
+	],
+	"lie": [
+		"While we have our doubts… we will choose to trust you. But be warned, we will not hesitate to attack if you are lying",
+		"*spirits venture to the farm and return only to report that the farmer is nowhere to be found.",
+		"Thievery, ignorance, and deception.",
+		"These are exactly the sins of humans we seek to protect ourselves from",
+		{
+			"*You have been killed by vengeful spirits*": "$lie_to_spirits"
+		}
+	],
+	"agreeToHelp": [
+		"Thank you, but it’s strange. These crops seem similar to the ones the farmer west of these springs grow",
+		"The farmer is frugal and has little food.",
+		"Wanderer… where did you get this food?",
+		{
+			"*Lie*": 
+				{
+					"The farmer shared his crops with me.": "@lie2" 
+			 	}
+		}
+	],
+	"lie2": [
+		"To think we have sustained ourselves on the very violence we swore to protect against",
+		"We should end you now… but your generosity has saved you.",
+		"Do not take this as an invitation back here. If you return, we will not hesitate in ending you.",
+		"$lie_to_spirits_2"
+	],
+	"refuseToShare": [
+		"It’s strange… these crops seem similar to the ones the farmer west of these springs grow",
+		"Wanderer… what did you do to the farmer?",
+		"Many travelers have come by, and many have done great harm that we can never recover from.",
+		"Thievery, ignorance, and deception.",
+		"These are exactly the sins of humans we seek to protect ourselves from.",
+		"You are the cause of these sins that have ailed us. We should end your life here to protect us.",
+		"*You have been killed by the vengeful spirits*",
+		"$refuse_to_share_with_spirits"
 	]
+	
 }
