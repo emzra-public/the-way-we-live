@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4iywibc5qosh"
-path="res://.godot/imported/exampleSpriteLeft.png-25e64ffa3103b6970cd93317cb4c6eb3.ctex"
+uid="uid://bs6410xyvvumj"
+path="res://.godot/imported/chara-fall.png-4e9f61f272e6e3d609a331e06c763d57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/exampleSpriteLeft.png"
-dest_files=["res://.godot/imported/exampleSpriteLeft.png-25e64ffa3103b6970cd93317cb4c6eb3.ctex"]
+source_file="res://assets/chara-fall.png"
+dest_files=["res://.godot/imported/chara-fall.png-4e9f61f272e6e3d609a331e06c763d57.ctex"]
 
 [params]
 

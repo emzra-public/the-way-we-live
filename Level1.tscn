@@ -51,7 +51,7 @@ centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2(1556, 840)
-polygon = PackedVector2Array(-1548, -826, -1072, -847, -1069, -695, -1066, 241, -518, 248, -92, 117, 957, 115, 1304, -104, 1585, -911, 1575, 687, -1552, 677)
+polygon = PackedVector2Array(-1548, -826, -1072, -847, -1069, -695, -1066, 241, -518, 248, -92, 117, 957, 115, 963, -910, 1585, -911, 1575, 687, -1552, 677)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_brqwi")]
 z_index = 1

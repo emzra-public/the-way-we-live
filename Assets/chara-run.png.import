@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjp5difj8m2eq"
-path="res://.godot/imported/exampleSpriteRight.png-7143881f7e3c2f5bc8ccfd45b749915d.ctex"
+uid="uid://u73y6w0xdh8a"
+path="res://.godot/imported/chara-run.png-d7355e78dc012956cc8b885cba77da6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/exampleSpriteRight.png"
-dest_files=["res://.godot/imported/exampleSpriteRight.png-7143881f7e3c2f5bc8ccfd45b749915d.ctex"]
+source_file="res://assets/chara-run.png"
+dest_files=["res://.godot/imported/chara-run.png-d7355e78dc012956cc8b885cba77da6f.ctex"]
 
 [params]
 

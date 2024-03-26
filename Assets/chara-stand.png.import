@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mfvbexo7hn8b"
-path="res://.godot/imported/dialogue-box-sample.png-32697dfd98bfbb9c51b785579e237b24.ctex"
+uid="uid://co4xc1i4xyvbf"
+path="res://.godot/imported/chara-stand.png-00ad669f55694999710ed650ce718e6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dialogue-box-sample.png"
-dest_files=["res://.godot/imported/dialogue-box-sample.png-32697dfd98bfbb9c51b785579e237b24.ctex"]
+source_file="res://assets/chara-stand.png"
+dest_files=["res://.godot/imported/chara-stand.png-00ad669f55694999710ed650ce718e6b.ctex"]
 
 [params]
 

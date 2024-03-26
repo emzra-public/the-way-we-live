@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+@onready var sprite = $Sprite2D
+@onready var sprite_stand = load("res://assets/chara-stand.png")
+@onready var sprite_run = load("res://assets/chara-run.png")
+@onready var sprite_fall = load("res://assets/chara-fall.png")
+
 var MAX_SPEED = 700.0
 var speed = 50.0
 var jump_speed = -600.0
@@ -18,11 +23,20 @@ func _physics_process(delta):
 
 	# Get the input direction.
 	var direction = Input.get_axis("move_left", "move_right")
-	velocity.x += direction * speed
-	if velocity.x > 0:
-		$Sprite2D.flip_h = false
-	elif velocity.x < 0:
+	if direction == 0:
+		if velocity.y > 20:
+			$Sprite2D.texture = sprite_fall
+		else:
+			$Sprite2D.texture = sprite_stand
+	elif direction == -1:
 		$Sprite2D.flip_h = true
+		$Sprite2D.texture = sprite_run
+	else:
+		$Sprite2D.flip_h = false
+		$Sprite2D.texture = sprite_run
+
+
+	velocity.x += direction * speed
 	if (velocity.x > MAX_SPEED):
 		velocity.x = MAX_SPEED
 	elif (velocity.x < -MAX_SPEED):
