@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bijdq31bv5ynf"
-path="res://.godot/imported/springs-background.png-3727e6f25ec02e28877f48a5a0f18e24.ctex"
+path="res://.godot/imported/springs-background.png-2616ec37895d45c3f191c53e7ab396c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/springs-background.png"
-dest_files=["res://.godot/imported/springs-background.png-3727e6f25ec02e28877f48a5a0f18e24.ctex"]
+source_file="res://Assets/springs-background.png"
+dest_files=["res://.godot/imported/springs-background.png-2616ec37895d45c3f191c53e7ab396c9.ctex"]
 
 [params]
 
