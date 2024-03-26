@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdhddcnihylgl"]
+[gd_scene load_steps=8 format=3 uid="uid://bdhddcnihylgl"]
 
-[ext_resource type="PackedScene" uid="uid://ck5buu2hf4kbd" path="res://components/InteractDialogCanvas.tscn" id="1_somg4"]
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="2_brqwi"]
 [ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://assets/placeholder-floor.png" id="3_fdw0o"]
 [ext_resource type="PackedScene" uid="uid://d3tetmsy6ira5" path="res://components/InteractPoint.tscn" id="4_nrrpi"]
@@ -16,9 +15,6 @@ size = Vector2(504, 284)
 size = Vector2(612, 341)
 
 [node name="Scene1" type="Node2D"]
-
-[node name="DialogPlayer" parent="." instance=ExtResource("1_somg4")]
-all_text_file = "res://Assets/dialogue.json"
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_brqwi")]
 position = Vector2(1, -712)
@@ -56,4 +52,5 @@ texture = ExtResource("3_fdw0o")
 
 [editable path="NPCharacter"]
 [editable path="NPCharacter/InteractPoint"]
+[editable path="NPCharacter/DialogBox"]
 [editable path="InteractPoint_TransferTo2"]

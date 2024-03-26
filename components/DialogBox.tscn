@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf16y1tuvk02b"]
+
+[ext_resource type="Script" path="res://components/DialogBox.gd" id="1_md3a4"]
+[ext_resource type="Texture2D" uid="uid://bl34wscs2b8pg" path="res://assets/dialog_box.png" id="1_nsae2"]
+[ext_resource type="FontFile" uid="uid://bbt1eaws8pqgh" path="res://assets/Urbanist-Medium.ttf" id="2_6uxft"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffuyr"]
+
+[node name="DialogBox" type="MarginContainer"]
+process_mode = 3
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_md3a4")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_nsae2")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="ChoicesContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Choices" type="VBoxContainer" parent="ChoicesContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ChoicesContainer/Choices"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_ffuyr")
+
+[node name="LabelContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="LabelContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6uxft")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

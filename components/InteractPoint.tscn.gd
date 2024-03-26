@@ -8,7 +8,7 @@ var area_active = false
 func _input(event):
 	if area_active and event.is_action_pressed("ui_accept"):
 		if type == "Dialog":
-			G_Interact.DIALOG.emit(dialog_key)
+			get_parent().BEGIN_DIALOG.emit(dialog_key)
 		if type == "Transfer":
 			get_tree().change_scene_to_file(transfer_scene_file)
 
