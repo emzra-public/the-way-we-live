@@ -1,29 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh4tsucf6r8pf"]
+[gd_scene load_steps=6 format=3 uid="uid://bh4tsucf6r8pf"]
 
 [ext_resource type="Script" path="res://components/ChoicesBox.tscn.gd" id="1_evekd"]
 [ext_resource type="Texture2D" uid="uid://dlqn0tvcr800i" path="res://assets/dialog_box.png" id="2_ktrqk"]
+[ext_resource type="FontFile" uid="uid://bbt1eaws8pqgh" path="res://assets/Urbanist-Medium.ttf" id="3_h3juw"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_255cv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bp6wm"]
+texture = ExtResource("2_ktrqk")
+texture_margin_left = 16.0
+texture_margin_top = 4.0
+texture_margin_right = 16.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xx53y"]
+texture = ExtResource("2_ktrqk")
+texture_margin_left = 16.0
+texture_margin_top = 4.0
+texture_margin_right = 16.0
+texture_margin_bottom = 4.0
 
 [node name="ChoicesBox" type="MarginContainer"]
 process_mode = 3
-offset_right = 94.0
-offset_bottom = 53.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -15.5
+offset_right = 36.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_evekd")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="Choices" type="HBoxContainer" parent="."]
 layout_mode = 2
-texture = ExtResource("2_ktrqk")
-region_rect = Rect2(0, 0, 128, 128)
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="Choices" type="VBoxContainer" parent="."]
-process_mode = 3
-layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+alignment = 1
 
 [node name="Button" type="Button" parent="Choices"]
 layout_mode = 2
-theme_override_styles/hover = SubResource("StyleBoxFlat_255cv")
+theme_override_colors/font_hover_color = Color(1, 0.458824, 0.486275, 1)
+theme_override_fonts/font = ExtResource("3_h3juw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_bp6wm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xx53y")
