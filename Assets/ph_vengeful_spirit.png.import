@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fntfr1msklia"
-path="res://.godot/imported/ph_vengeful_spirit.png-cdfb545958341efb1d543d7f3c06ddb5.ctex"
+path="res://.godot/imported/ph_vengeful_spirit.png-1aa8433613658e604d0d0053d2105c8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ph_vengeful_spirit.png"
-dest_files=["res://.godot/imported/ph_vengeful_spirit.png-cdfb545958341efb1d543d7f3c06ddb5.ctex"]
+source_file="res://Assets/ph_vengeful_spirit.png"
+dest_files=["res://.godot/imported/ph_vengeful_spirit.png-1aa8433613658e604d0d0053d2105c8a.ctex"]
 
 [params]
 

@@ -1,18 +1,52 @@
 {
 	"first": [
-		"hi",
-		"pick some options now",
+		"Where is this place? Well, you're in the endless ocean of Dukkha.",
+		"For where exactly we are... I do not know.",
+		"This is one realm for you to wander and build your next life.",
+		"This is the process of wandering and suffering we call samsara.",
 		{
-			"option a": "@second",
-			"option b": "@third"
+			"Who are you?": "@second",
+			"How do I get out of here?": "@third",
+			"Skip.": "@fourth"
 		}
 	],
 	"second": [
-		"this is a",
-		"$increase_player_strength"
+		"I am Naraka, a farmer.",
+		"Finding substenance here is a challenge and I have chosen to grow foods myself.",
+		"The soil is arid and water is hard to come by",
+		"but I have gained knowledge from being here for over 300 years.",
+		"My biggest challenge is now fending off all the hungry spirits who try to steal my food..."
 	],
 	"third": [
-		"this is b",
-		"$increase_boss_strength"
+		"You can spend an eternity searching for an answer to this question.",
+		"I have seen many start their journey here and continue their descent.",
+		"Some returned, but many more I have never seen again.",
+		"It seems an end is possible, though the journey there seems a mystery.",
+		"Explore and maybe you may find that your questions are answered..."
+	],
+	"fourth": [
+		"Not much of a talking type, I see..."
+	],
+	"fifth": [
+		"My resources are very limited and I do not wish to extend goodwill for no benefit of my own.",
+		"I can already see that you are injured and are of no use to me.",
+		"... However...",
+		"My arms and legs are failing me and I no longer have the strength to fetch water.",
+		"Help bring water from the peaks of the mountain.",
+		"The hike is ong, but I am sure you are fit to do it.",
+		"Only then will I share the remnants of my food with you.",
+		{
+			"Accept quest": "@sixth",
+			"Refuse quest and walk away": "@seventh",
+			"Attack Nāraka and steal their food": "@eighth"
+		}
+	],
+	"sixth": [
+		"This spring is ours!",
+		"You are attempting to steal our water!",
+		{
+			
+		}
 	]
+	
 }

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce8cgftdtxvb7"
-path="res://.godot/imported/placeholder-floor.png-f3292a4d439833d936012a2da52a034d.ctex"
+uid="uid://cog5vc07s0ca1"
+path="res://.godot/imported/springs-foreground.png-9a946bafd6f1d36ab33488330bc93101.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placeholder-floor.png"
-dest_files=["res://.godot/imported/placeholder-floor.png-f3292a4d439833d936012a2da52a034d.ctex"]
+source_file="res://Assets/springs-foreground.png"
+dest_files=["res://.godot/imported/springs-foreground.png-9a946bafd6f1d36ab33488330bc93101.ctex"]
 
 [params]
 
