@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
+var MAX_SPEED = 600.0
 var speed = 300.0
-var jump_speed = -400.0
+var jump_speed = -600.0
 
 # Get the gravity from the project settings so you can sync with rigid body nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = 1200
 
 
 func _physics_process(delta):
@@ -17,6 +18,7 @@ func _physics_process(delta):
 
 	# Get the input direction.
 	var direction = Input.get_axis("move_left", "move_right")
-	velocity.x = direction * speed
+	velocity.x += direction * speed
+	if velocity.x >= 
 
 	move_and_slide()

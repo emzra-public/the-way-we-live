@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var DialogBox = $DialogBox
-@onready var ChoicesBox = $ChoicesBox
 @onready var InteractPoint = $InteractPoint
 @onready var TooltipInteractableNow = $InteractPoint/TooltipInteractableNow
 
