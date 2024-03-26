@@ -33,7 +33,7 @@ z_index = 2
 z_as_relative = false
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
-position = Vector2(1497, 94)
+position = Vector2(1497, 158)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_yx1l0")
 

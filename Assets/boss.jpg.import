@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxwk1x1loyhxg"
-path="res://.godot/imported/springs-foreground-forreal-ipromise.png-e6eb867be2e135ac2f4b8f1d9b73ddca.ctex"
+uid="uid://b5cpqci80d1gd"
+path="res://.godot/imported/boss.jpg-409c6fc27cd34045945d56ced3df6ae3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/springs-foreground-forreal-ipromise.png"
-dest_files=["res://.godot/imported/springs-foreground-forreal-ipromise.png-e6eb867be2e135ac2f4b8f1d9b73ddca.ctex"]
+source_file="res://assets/boss.jpg"
+dest_files=["res://.godot/imported/boss.jpg-409c6fc27cd34045945d56ced3df6ae3.ctex"]
 
 [params]
 

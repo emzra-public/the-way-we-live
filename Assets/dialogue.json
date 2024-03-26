@@ -1,13 +1,18 @@
 {
 	"first": [
-		"Where is this place? Well, you're in the endless ocean of Dukkha.",
-		"For where exactly we are... I do not know.",
-		"This is one realm for you to wander and build your next life.",
-		"This is the process of wandering and suffering we call samsara.",
+		"...hm?",
 		{
-			"Who are you?": "@second",
-			"How do I get out of here?": "@third",
-			"Skip.": "@fourth"
+			"Where is this place?": [
+				"Well, you're in the endless ocean of Dukkha.",
+				"For where exactly we are... I do not know.",
+				"This is one realm for you to wander and build your next life.",
+				"This is the process of wandering and suffering we call samsara.",
+				{
+					"Who are you?": "@second",
+					"How do I get out of here?": "@third",
+					"Skip.": "@fourth"
+				}
+			]
 		}
 	],
 	"second": [
@@ -44,27 +49,9 @@
 	"sixth": [
 		"This spring is ours!",
 		"You are attempting to steal our water!",
-		"We really ought to steal back from the farmer instead!",
 		{
-			"Yeah, maybe you should": "@ninth",
-			"I don't think that's the right solution": "@tenth"
+			
 		}
-	],
-	"seventh": [
-		"Who are you and what are you doing in our spring?",
-		"You better not try and steal any of our water like the others!",
-		{
-			"Tell truth: wanderer": "@eleventh",
-			"Lie: I know the farmer": "@twelfth"
-		}
-	],
-	"eighth": [
-		"Who are you and what are you doing in our spring?",
-		"You better not try and steal any of our water like the others!", 
-		{
-			"Lie: I know farmer":  "@thirteenth",
-			"Lie I refuse to share food with you" : "@fourteenth",
-		},
 	]
 	
 }
