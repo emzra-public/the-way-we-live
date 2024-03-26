@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bslrbnyuw2rvm" path="res://components/NPCharacter.tscn" id="4_xcvac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f63s"]
-size = Vector2(200, 284)
+size = Vector2(347, 284)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob2h1"]
 size = Vector2(176, 541)
@@ -58,14 +58,21 @@ z_index = 1
 position = Vector2(592, 406)
 
 [node name="NPCharacter" parent="." instance=ExtResource("4_xcvac")]
-position = Vector2(1587, 804)
+position = Vector2(1612, 839)
 
 [node name="InteractPoint" parent="NPCharacter" index="1"]
+position = Vector2(-88.5, -103)
 dialog_key = "$naraka"
 
 [node name="CollisionShape2D" parent="NPCharacter/InteractPoint" index="0"]
-position = Vector2(-29, 0)
+position = Vector2(58.5, 74)
 shape = SubResource("RectangleShape2D_4f63s")
+
+[node name="DialogBox" parent="NPCharacter" index="2"]
+offset_left = -121.0
+offset_top = -303.0
+offset_right = -56.0
+offset_bottom = -232.0
 
 [node name="InteractPoint_TransferTo2" parent="." instance=ExtResource("4_nrrpi")]
 position = Vector2(1031, 793)

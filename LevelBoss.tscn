@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dl5c8eg8i4qvn"]
 
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="1_gjney"]
-[ext_resource type="Texture2D" uid="uid://b5cpqci80d1gd" path="res://Assets/boss.jpg" id="2_0q6pm"]
+[ext_resource type="Texture2D" uid="uid://b5cpqci80d1gd" path="res://assets/boss.jpg" id="2_0q6pm"]
 [ext_resource type="PackedScene" uid="uid://bslrbnyuw2rvm" path="res://components/NPCharacter.tscn" id="3_o1kub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlwo0"]
@@ -21,12 +21,16 @@ size = Vector2(1705, 614.5)
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_gjney")]
 position = Vector2(578, 339)
 
-[node name="ChoicesBox" parent="PlayerCharacter" index="5"]
+[node name="ChoicesBox" parent="PlayerCharacter" index="4"]
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 94.0
+offset_bottom = 53.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -65,12 +69,7 @@ position = Vector2(870, 533)
 [node name="Sprite2D" parent="NPCharacter" index="0"]
 texture = null
 
-[node name="Sprite2D2" parent="NPCharacter" index="1"]
-visible = false
-position = Vector2(66.75, -123.75)
-scale = Vector2(4.60811, 1.33784)
-
-[node name="InteractPoint" parent="NPCharacter" index="2"]
+[node name="InteractPoint" parent="NPCharacter" index="1"]
 position = Vector2(-13, 6)
 dialog_key = "$boss"
 
@@ -78,13 +77,13 @@ dialog_key = "$boss"
 position = Vector2(-81, -218)
 shape = SubResource("RectangleShape2D_ism8m")
 
-[node name="TooltipInteractable" parent="NPCharacter/InteractPoint" index="1"]
+[node name="TooltipInteractable" parent="NPCharacter/InteractPoint" index="2"]
 texture = null
 
-[node name="TooltipInteractableNow" parent="NPCharacter/InteractPoint" index="2"]
+[node name="TooltipInteractableNow" parent="NPCharacter/InteractPoint" index="3"]
 texture = null
 
-[node name="DialogBox" parent="NPCharacter" index="3"]
+[node name="DialogBox" parent="NPCharacter" index="2"]
 offset_left = -385.0
 offset_top = -490.0
 offset_right = 193.0
