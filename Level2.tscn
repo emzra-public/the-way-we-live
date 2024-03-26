@@ -1,13 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6ptl3gchbhm8"]
+[gd_scene load_steps=8 format=3 uid="uid://bp0m0cetwtwih"]
 
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="1_bufxc"]
-[ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://assets/placeholder-floor.png" id="2_3dsmv"]
+[ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://Assets/placeholder-floor.png" id="2_3dsmv"]
 [ext_resource type="PackedScene" uid="uid://d3tetmsy6ira5" path="res://components/InteractPoint.tscn" id="3_xtwwu"]
-
 [ext_resource type="Texture2D" uid="uid://bijdq31bv5ynf" path="res://Assets/springs-background.png" id="4_qpsac"]
 [ext_resource type="Texture2D" uid="uid://cog5vc07s0ca1" path="res://Assets/springs-foreground.png" id="5_yx1l0"]
 [ext_resource type="PackedScene" uid="uid://bslrbnyuw2rvm" path="res://components/NPCharacter.tscn" id="6_rtocj"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi7jl"]
 size = Vector2(167, 426)
@@ -57,10 +55,12 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_3dsmv")
 
 [node name="NPCharacter" parent="." instance=ExtResource("6_rtocj")]
-position = Vector2(2220, 300)
+position = Vector2(2192, 269)
 
 [node name="InteractPoint" parent="NPCharacter" index="2"]
-dialog_key = "$boss"
+position = Vector2(3, 3)
+dialog_key = "$spirit"
+transfer_scene_file = "res://LevelBoss.tscn"
 
 [editable path="InteractPoint"]
 [editable path="NPCharacter"]
