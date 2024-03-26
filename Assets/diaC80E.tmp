@@ -7,21 +7,12 @@
 				"For where exactly we are... \n I do not know.",
 				"This is one realm for you to wander \n and build your next life.",
 				"This is the process of wandering \n and suffering we call samsara.",
-				"@first.1"
+				{
+					"Who are you?": "@second",
+					"How do I get out of here?": "@third",
+					"Skip.": "@fourth"
+				}
 			]
-		}
-	],
-	"first.1": [
-		{
-			"Who are you?": "@second",
-			"How do I get out of here?": "@third",
-		}
-	],
-	"first.2": [
-		{
-			"Who are you?": "@second",
-			"How do I get out of here?": "@third",
-			"I don't have any other questions to ask you.": "@fourth"
 		}
 	],
 	"second": [
@@ -29,20 +20,20 @@
 		"Finding substenance here is \n a challenge and I have chosen to \n grow foods myself.",
 		"The soil is arid and water is \n hard to come by",
 		"but I have gained knowledge from \n being here for over 300 years.",
-		"My biggest challenge is now fending \n off all the hungry spirits who \n try to steal my food...",
-		"$arrived",
+		"My biggest challenge is now fending \n off all the hungry spirits who \n try to steal my food..."
 	],
 	"third": [
 		"You can spend an eternity searching \n for an answer to this question.",
 		"I have seen many start their journey \n here and continue their descent.",
 		"Some returned, but many more \n I have never seen again.",
 		"It seems an end is possible, \n though the journey there seems a mystery.",
-		"Explore and maybe you may find \n that your questions are answered...",
-		"$arrived",
+		"Explore and maybe you may find \n that your questions are answered..."
 	],
 	"fourth": [
 		"Not much of a talking type, I see...",
-		"$arrived"
+		{
+			"...": "@fifth"
+		}
 	],
 	"fifth": [
 		"My resources are very limited and I \n do not wish to extend goodwill \n for no benefit of my own.",

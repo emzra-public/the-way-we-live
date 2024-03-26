@@ -15,12 +15,6 @@
 		{
 			"Who are you?": "@second",
 			"How do I get out of here?": "@third",
-		}
-	],
-	"first.2": [
-		{
-			"Who are you?": "@second",
-			"How do I get out of here?": "@third",
 			"I don't have any other questions to ask you.": "@fourth"
 		}
 	],
@@ -42,7 +36,9 @@
 	],
 	"fourth": [
 		"Not much of a talking type, I see...",
-		"$arrived"
+		{
+			"...": "@fifth"
+		}
 	],
 	"fifth": [
 		"My resources are very limited and I \n do not wish to extend goodwill \n for no benefit of my own.",
