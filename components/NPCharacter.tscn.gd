@@ -60,8 +60,11 @@ func on_display_dialog(text_key = null):
 			set_current_block(all_text[current_line.trim_prefix("@")])
 			on_display_dialog()
 		elif (current_line.begins_with("$")):
-			var command = Callable(G_Player, current_line.trim_prefix("$"))
-			command.call()
+			if typeof(G_Player.get(current_line.trim_prefix("$"))) == TYPE_BOOL:
+				G_Player.set(current_line.trim_prefix("$"), true)
+			else:
+				var command = Callable(G_Player, current_line.trim_prefix("$"))
+				command.call()
 			on_display_dialog()
 		else:
 			dialog_locked = true

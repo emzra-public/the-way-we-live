@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmwf8unm2k7fy"
-path="res://.godot/imported/placeholder-sprite-sheet.png-3173c4a080352883df0e0e5c91d8ac54.ctex"
+uid="uid://bak06273l1dpq"
+path="res://.godot/imported/chara-land.png-e333e85d93b8d70f229ebbc482d15604.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholder-sprite-sheet.png"
-dest_files=["res://.godot/imported/placeholder-sprite-sheet.png-3173c4a080352883df0e0e5c91d8ac54.ctex"]
+source_file="res://assets/chara-land.png"
+dest_files=["res://.godot/imported/chara-land.png-e333e85d93b8d70f229ebbc482d15604.ctex"]
 
 [params]
 

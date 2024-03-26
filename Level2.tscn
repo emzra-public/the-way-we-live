@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bp0m0cetwtwih"]
+[gd_scene load_steps=10 format=3 uid="uid://bp0m0cetwtwih"]
 
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="1_bufxc"]
 [ext_resource type="Texture2D" uid="uid://ce8cgftdtxvb7" path="res://assets/placeholder-floor.png" id="2_3dsmv"]
@@ -6,12 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://bijdq31bv5ynf" path="res://assets/springs-background.png" id="4_qpsac"]
 [ext_resource type="Texture2D" uid="uid://cog5vc07s0ca1" path="res://assets/springs-foreground.png" id="5_yx1l0"]
 [ext_resource type="PackedScene" uid="uid://bslrbnyuw2rvm" path="res://components/NPCharacter.tscn" id="6_rtocj"]
+[ext_resource type="Texture2D" uid="uid://weh56q7lcr3k" path="res://assets/SPIRITS.png" id="7_sxdka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi7jl"]
 size = Vector2(167, 426)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s731x"]
-size = Vector2(218, 129)
+size = Vector2(272, 274.5)
 
 [node name="Scene2" type="Node2D"]
 
@@ -42,6 +43,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_yx1l0")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_bufxc")]
+z_index = 1
 position = Vector2(441, 330)
 
 [node name="InteractPoint" parent="." instance=ExtResource("3_xtwwu")]
@@ -60,12 +62,23 @@ texture = ExtResource("2_3dsmv")
 [node name="NPCharacter" parent="." instance=ExtResource("6_rtocj")]
 position = Vector2(2229, 291)
 
+[node name="Sprite2D" parent="NPCharacter" index="0"]
+position = Vector2(0, -51)
+texture = ExtResource("7_sxdka")
+
 [node name="InteractPoint" parent="NPCharacter" index="1"]
+position = Vector2(11.5, -1)
 dialog_key = "$spirit"
 
 [node name="CollisionShape2D" parent="NPCharacter/InteractPoint" index="0"]
-position = Vector2(-46, 54.5)
+position = Vector2(-29.5, -5)
 shape = SubResource("RectangleShape2D_s731x")
+
+[node name="DialogBox" parent="NPCharacter" index="2"]
+offset_left = -21.0
+offset_top = -201.0
+offset_right = 44.0
+offset_bottom = -130.0
 
 [node name="InteractPoint2" parent="." instance=ExtResource("3_xtwwu")]
 position = Vector2(2531, -23)

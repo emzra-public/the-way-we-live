@@ -71,18 +71,18 @@
 			"The farmer is the cause of these sins\n that have ailed us.",
 			"We should end the farmer’s life\n here to protect us once and for all!",
 			{
-				"*Discourage spirits*": {"I know the farmer has caused harm,\n but I don’t believe this is the right thing to do.": [
+				"*Discourage spirits*": {"Please wait… I know the farmer has caused\n harm, but I don’t believe this\n is the right thing to do. Stay home. He has nothing left anyways": [
 					"$rebirth_good",
 					"...",
 					"We shall listen to you. It is imperative \n for us now to protect what little we have left",
-					"I can see that you have become \nweak from your hunger...",
+					"I can see that you have become weak from your hunger...",
 					"I am sorry that we could not have protected you.",
 					"We hope you pass on peacefully..."
 				]},
 				"*Say nothing and let the spirits seek revenge*": {"...": [
 					"$rebirth_mostly_good",
-					"Wanderer, please leave us so you don't\n witness this violence",
-					"I can see that you have become \nweak from your hunger",
+					"Wanderer, please leave us so you don't witness this violence",
+					"I can see that you have become weak from your hunger",
 					"I am sorry that your final moments led up to this..."
 				]}
 			}

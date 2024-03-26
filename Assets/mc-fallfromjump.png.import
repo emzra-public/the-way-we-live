@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ypq7k0civen"
-path="res://.godot/imported/placeholder-npc.png-1d63aefa402f42a31f3d9acff4baa895.ctex"
+uid="uid://d0mpdaxuuhggf"
+path="res://.godot/imported/mc-fallfromjump.png-57e25e2c16350dd4be3b756fd9775512.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholder-npc.png"
-dest_files=["res://.godot/imported/placeholder-npc.png-1d63aefa402f42a31f3d9acff4baa895.ctex"]
+source_file="res://assets/mc-fallfromjump.png"
+dest_files=["res://.godot/imported/mc-fallfromjump.png-57e25e2c16350dd4be3b756fd9775512.ctex"]
 
 [params]
 

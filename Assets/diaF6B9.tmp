@@ -24,7 +24,9 @@
 		"The soil is arid and water is \n hard to come by",
 		"but I have gained knowledge from \n being here for over 300 years.",
 		"My biggest challenge is now fending \n off all the hungry spirits who \n try to steal my food...",
-		"@first.1"
+		{
+			"Nice": "@first.1"
+		}
 	],
 	"third": [
 		"You can spend an eternity searching \n for an answer to this question.",
@@ -32,30 +34,23 @@
 		"Some returned, but many more \n I have never seen again.",
 		"It seems an end is possible, \n though the journey there seems a mystery.",
 		"Explore and maybe you may find \n that your questions are answered...",
-		"@first.1"
+		{
+			"Nice": "@first.1"
+		}
 	],
 	"fourth": [
 		"Not much of a talking type, I see...",
+		"My resources are very limited and I \n do not wish to extend goodwill \n for no benefit of my own.",
+		"I can already see that you are \n injured and are of no use to me.",
+		"... However...",
+		"My arms and legs are failing \n me and I no longer have the \n strength to fetch water.",
+		"Help bring water from \n the peaks of the mountain.",
+		"The hike is long, but I am \n sure you are fit to do it.",
+		"Only then will I share the \n remnants of my food with you.",
 		{
-			"*Ask for food*": [
-				"My resources are very limited and I \n do not wish to extend goodwill \n for no benefit of my own.",
-				"... However, my arms and legs are failing me,\n and I no longer have the strength to fetch water",
-				"Help bring water from the peaks of the mountain.\n The hike is long, but I am sure you are fit to do it.\n Only then will I share the remnants of my food with you.",
-				{
-					"*Accept Offer*": ["$quest_accepted", "Thank you traveler..."],
-					"*Refuse Nāraka’s offer*": [
-						"...",
-						"$quest_refused",
-						"Very well then. I wish you luck on your journey."
-					]
-				}
-			],
-			"*Attack Nāraka, and steal food*": {
-				"You are engulfed by an intense rage,\nand hit the farmer again and again until knocked unconscious.\nHis head is bleeding": {
-					"You grab every crop you can get\n your hands on and run away, \nas far as you can": 
-						"$stole_and_attacked"
-					}
-				}
+			"*Accept quest*": "$quest_accepted",
+			"*Refuse quest and walk away*": "$quest_refused",
+			"*Attack Nāraka and steal their food*": "$stole_and_attacked"
 		}
 	],
 	"sixth": 
@@ -71,18 +66,16 @@
 			"The farmer is the cause of these sins\n that have ailed us.",
 			"We should end the farmer’s life\n here to protect us once and for all!",
 			{
-				"*Discourage spirits*": {"I know the farmer has caused harm,\n but I don’t believe this is the right thing to do.": [
+				"*Discourage spirits*": {"Please wait… I know the farmer has caused\n harm, but I don’t believe this\n is the right thing to do. Stay home. He has nothing left anyways": [
 					"$rebirth_good",
 					"...",
 					"We shall listen to you. It is imperative \n for us now to protect what little we have left",
-					"I can see that you have become \nweak from your hunger...",
-					"I am sorry that we could not have protected you.",
-					"We hope you pass on peacefully..."
+					"*Your hunger leads to starvation,\n and your time in this realm ends*"
 				]},
 				"*Say nothing and let the spirits seek revenge*": {"...": [
 					"$rebirth_mostly_good",
-					"Wanderer, please leave us so you don't\n witness this violence",
-					"I can see that you have become \nweak from your hunger",
+					"Wanderer, please leave us so you don't witness this violence",
+					"I can see that you have become weak from your hunger",
 					"I am sorry that your final moments led up to this..."
 				]}
 			}
@@ -156,7 +149,8 @@
 		"Thievery, ignorance, and deception.",
 		"These are exactly the sins of humans\n we seek to protect ourselves from.",
 		"You are the cause of these sins that have ailed us. \nWe shall end your life here to protect us.",
-		{"*You have been killed by the vengeful spirits*": "$rebirth_jerk"}
+		"*You have been killed by the vengeful spirits*",
+		"$rebirth_jerk"
 	],
 
 	"rebirth_good": [
@@ -167,7 +161,7 @@
 		"They will hold your memory in \nappreciation, and cherish your moments in life",
 		"For now, you have become the sum\n of all your actions in this\n world. You will now journey\n on to the next realm",
 		{
-			"*End Game*": "$end_game"
+			"Rebirth": "$rebirth"
 		}
 	],
 	"rebirth_mostly_good": [
@@ -177,7 +171,7 @@
 		"...and they will heal others for generations to come",
 		"We can hope that your virtuous deeds will be continued by others",
 		{
-			"*Rebirth*": "$rebirth"
+			"Rebirth": "$rebirth"
 		}
 	],
 	"rebirth_not_bad": [
@@ -186,7 +180,7 @@
 		"You may have had beliefs that urged you to help others,\n but you let the promises of desire and\n ignorance lead you astray",
 		"The world will take much time to heal.\nYou are doomed to stay here and wander until you\ncan find practices of virtuosity",
 		{
-			"*Rebirth*": "$rebirth"
+			"Rebirth": "$rebirth"
 		}
 	],
 	"rebirth_jerk": [
@@ -194,7 +188,7 @@
 		"With your survival at risk,\nyour failure to accomplish good in\nthis world bred selfish actions.\nYou caused much pain and suffering to others",
 		"You are doomed to live in the\n same suffering you have inflicted \nupon others, onto me",
 		{
-			"*Rebirth*": "$rebirth"
+			"Rebirth": "$rebirth"
 		}
 	]
 }

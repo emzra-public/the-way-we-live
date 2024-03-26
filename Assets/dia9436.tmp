@@ -1,0 +1,179 @@
+{
+	"first": [
+		"...hm?",
+		{
+			"Where is this place?": [
+				"Well, you're in the endless \n ocean of Dukkha.",
+				"For where exactly we are... \n I do not know.",
+				"This is one realm for you to wander \n and build your next life.",
+				"This is the process of wandering \n and suffering we call samsara.",
+				"@first.1"
+			]
+		}
+	],
+	"first.1": [
+		{
+					"Who are you?": "@second",
+					"How do I get out of here?": "@third",
+					"I don't have any other questions to ask you.": "@fourth"
+		}
+	],
+	"second": [
+		"I am Naraka, a farmer.",
+		"Finding substenance here is \n a challenge and I have chosen to \n grow foods myself.",
+		"The soil is arid and water is \n hard to come by",
+		"but I have gained knowledge from \n being here for over 300 years.",
+		"My biggest challenge is now fending \n off all the hungry spirits who \n try to steal my food...",
+		{
+			"Nice": "@first.1"
+		}
+	],
+	"third": [
+		"You can spend an eternity searching \n for an answer to this question.",
+		"I have seen many start their journey \n here and continue their descent.",
+		"Some returned, but many more \n I have never seen again.",
+		"It seems an end is possible, \n though the journey there seems a mystery.",
+		"Explore and maybe you may find \n that your questions are answered...",
+		{
+			"Nice": "@first.1"
+		}
+	],
+	"fourth": [
+		"Not much of a talking type, I see...",
+		{
+			"...": "@fifth"
+		}
+	],
+	"fifth": [
+		"My resources are very limited and I \n do not wish to extend goodwill \n for no benefit of my own.",
+		"I can already see that you are \n injured and are of no use to me.",
+		"... However...",
+		"My arms and legs are failing \n me and I no longer have the \n strength to fetch water.",
+		"Help bring water from \n the peaks of the mountain.",
+		"The hike is long, but I am \n sure you are fit to do it.",
+		"Only then will I share the \n remnants of my food with you.",
+		{
+			"*Accept quest*": "$accepted_quest",
+			"*Refuse quest and walk away*": "$refused_quest",
+			"*Attack Nāraka and steal their food*": "$attack_and_steal"
+		}
+	],
+	"sixth": [
+		"You are not welcome here!",
+		"You are attempting to \n steal our water!",
+		"We really ought to steal back \n from the farmer instead!",
+		{
+			"I don't think that's the right solution": "$discourage_spirits",
+			"Yeah, maybe you should": "$encourage_spirits"
+		}
+	],
+	"seventh": [
+		"You are not welcome here!",
+		"For millennia we have guarded the \n last of this spring from thievery and destruction. \n We will not let you harm it!",
+		{
+			"Please wait!":
+				{
+					"*Tell truth*": {
+						"I have just entered this world. \n I bear no ill will to you or the springs,\n and I wish to only pass by \n if you will allow me to.": "@tellTruth" ,
+						},
+					"*Lie to Save Yourself*": {
+						"I’ve been sent by the farmer to bring water for his crops." : {
+							"He had promised to share the remains of his crops, \n if you help, I can exchange some of the crops I receive for this water." : "@lie"
+						}
+					}
+				}
+			}
+	],
+	"eighth": [
+		"For millennia we have guarded the last of this spring from thievery and destruction",
+		"...",
+		"We do not let humans enter our space, but wanderer… please hear our plea.",
+		"We are starving. Many travelers have come by, and many have done great harm that we can never recover from.",
+		"Our population is dwindling, and we need food.",
+		"Please… will you share your food with us?",
+		{
+					"*Agree to Help*": "@agreeToHelp",
+					"*Refuse to Share*": {
+						"I have limited food myself. I can only look out for myself. I will not give my food to you.": "@refuseToShare"
+					}
+			}
+	],
+	"ninth": [
+		"Good work. Next Realm.",
+		{
+			"Rebirth": "$rebirth"
+		}
+	],
+	"tenth": [
+		"Mostly good! Try again",
+		{
+			"Rebirth": "$rebirth"
+		}
+	],
+	"eleventh": [
+		"Mostly good! Try again",
+		{
+			"Rebirth": "$rebirth"
+		}
+	],
+	"twelfth": [
+		"Not bad, not good ):",
+		{
+			"Rebirth": "$rebirth"
+		}
+	],
+	"thirteenth": [
+		"Not bad, not good ):",
+		{
+			"Rebirth": "$rebirth"
+		}
+	],
+	"fourteenth": [
+		"ur a jerk",
+		{
+			"Rebirth": "$rebirth"
+		}
+	],
+	"tellTruth": [
+		"Many travelers have come by, and many have done great harm that we can never recover from.",
+		"Humans and spirits will never trust each other. That is the way things go. Our history deems that we must end you now.",
+			"$tell_truth_to_spirits"
+	],
+	"lie": [
+		"While we have our doubts… we will choose to trust you. \n But be warned, we will not hesitate to attack if you are lying",
+		"*spirits venture to the farm and return only to report that the farmer is nowhere to be found.",
+		"Thievery, ignorance, and deception.",
+		"These are exactly the sins of humans we seek to protect ourselves from",
+		{
+			"*You have been killed by vengeful spirits*": "$lie_to_spirits"
+		}
+	],
+	"agreeToHelp": [
+		"Thank you, but it’s strange. These crops seem similar to the ones the farmer west of these springs grow",
+		"The farmer is frugal and has little food.",
+		"Wanderer… where did you get this food?",
+		{
+			"*Lie*": 
+				{
+					"The farmer shared his crops with me.": "@lie2" 
+			 	}
+		}
+	],
+	"lie2": [
+		"To think we have sustained ourselves on the very violence we swore to protect against",
+		"We should end you now… but your generosity has saved you.",
+		"Do not take this as an invitation back here. If you return, we will not hesitate in ending you.",
+		"$lie_to_spirits_2"
+	],
+	"refuseToShare": [
+		"It’s strange… these crops seem similar to the ones the farmer west of these springs grow",
+		"Wanderer… what did you do to the farmer?",
+		"Many travelers have come by, and many have done great harm that we can never recover from.",
+		"Thievery, ignorance, and deception.",
+		"These are exactly the sins of humans we seek to protect ourselves from.",
+		"You are the cause of these sins that have ailed us. We should end your life here to protect us.",
+		"*You have been killed by the vengeful spirits*",
+		"$refuse_to_share_with_spirits"
+	]
+	
+}

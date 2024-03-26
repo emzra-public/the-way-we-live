@@ -3,6 +3,8 @@ extends Node
 signal GIVE_CHOICES(current_line)
 signal CHOSE_CHOICE(index)
 
+var cutscened = true
+
 # karma
 var player_karma = 0
 var round = 0
@@ -16,71 +18,36 @@ func decrease_player_karma():
 	print("Player karma is now: ", player_karma)
 
 # dialogue variables
-var quest_accepted = false
-var quest_refused = false
-var stole_and_attacked = false
-var spirits_encouraged = false
-var spirits_discouraged = false
-var spirits_told_truth = false
-var spirits_lied_to = false
-var spirits_lied_to_2 = false
-var spirits_refused_to_share_with = false
-
-func accepted_quest():
-	quest_accepted = true
-	
-func refused_quest():
-	quest_refused = true
-
-func attack_and_steal():
-	stole_and_attacked = true
-
-func discourage_spirits():
-	spirits_discouraged = true
-
-func encourage_spirits():
-	spirits_encouraged = true
-
-func tell_truth_to_spirits():
-	spirits_told_truth = true
-	
-func lie_to_spirits():
-	spirits_lied_to = true
-
-func lie_to_spirits_2():
-	spirits_lied_to_2 = true
-
-func refuse_to_share_with_spirits():
-	spirits_refused_to_share_with = true
 
 func naraka():
 	return "first"
 
+var quest_accepted = false
+var quest_refused = false
+var stole_and_attacked = false
+
 func spirit():
 	if quest_accepted:
 		return "sixth"
-
 	elif quest_refused:
 		return "seventh"
-
 	elif stole_and_attacked:
-		return "eighth" 
+		return "eighth"
+
+var rebirth_good = false
+var rebirth_mostly_good = false
+var rebirth_not_bad = false
+var rebirth_jerk = false
 
 func boss():
-	if spirits_encouraged:
-		return "ninth"
-	if spirits_discouraged:
-		return "tenth"
-	if spirits_told_truth:
-		return "eleventh"
-	if spirits_lied_to:
-		return "twelfth"
-	if spirits_lied_to_2:
-		return "thirteenth"
-	if spirits_refused_to_share_with:
-		return "fourteenth"
-	else:
-		return "ninth"
+	if rebirth_good:
+		return "rebirth_good"
+	if rebirth_mostly_good:
+		return "rebirth_mostly_good"
+	if rebirth_not_bad:
+		return "rebirth_not_bad"
+	if rebirth_jerk:
+		return "rebirth_jerk"
 
 #rebirth
 
@@ -88,16 +55,19 @@ func reset_dialogue_variables():
 	quest_accepted = false
 	quest_refused = false
 	stole_and_attacked= false
-	spirits_encouraged = false
-	spirits_discouraged = false
-	spirits_told_truth = false
-	spirits_lied_to = false
-	spirits_lied_to_2 = false
-	spirits_refused_to_share_with = false
+	rebirth_good = false
+	rebirth_mostly_good = false
+	rebirth_not_bad = false
+	rebirth_jerk = false
 	
-func rebirth():
+	
+func end_game():
 	reset_dialogue_variables()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://MenuStart.tscn")
 
-
+func rebirth():
+	reset_dialogue_variables()
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Level1.tscn")
+	cutscened = true
