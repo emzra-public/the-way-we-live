@@ -1,7 +1,6 @@
 extends Control
 
-func _ready():
-	$VBoxContainer/StartButton.grab_focus()
+var level = preload("res://Level1.tscn")
 
 func _on_StartButton_pressed():
-	get_tree().change_scene_to_file("res://Level1.tscn")
+	get_tree().change_scene_to_packed(level)

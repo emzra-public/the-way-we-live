@@ -1,34 +1,74 @@
-[gd_scene load_steps=2 format=3 uid="uid://4icu54bpeh7f"]
+[gd_scene load_steps=7 format=3 uid="uid://4icu54bpeh7f"]
 
 [ext_resource type="Script" path="res://MenuStart.tscn.gd" id="1_8h7vv"]
+[ext_resource type="Texture2D" uid="uid://dlqn0tvcr800i" path="res://assets/dialog_box.png" id="2_fwt0x"]
+[ext_resource type="Texture2D" uid="uid://bs6410xyvvumj" path="res://assets/chara-fall.png" id="2_hgxgb"]
+[ext_resource type="FontFile" uid="uid://bbt1eaws8pqgh" path="res://assets/Urbanist-Medium.ttf" id="3_vix5y"]
+[ext_resource type="FontFile" uid="uid://jd24igl3d0r8" path="res://assets/Urbanist-Bold.ttf" id="5_23cny"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxd27"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0, 0, 0, 0.709804)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="start" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_8h7vv")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -15.5
-offset_right = 23.0
-offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8h7vv")
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-2.49996, -2.24997)
+scale = Vector2(9.60156, 5.62891)
+texture = ExtResource("2_fwt0x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_hgxgb")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -204.0
+offset_top = 186.0
+offset_right = 204.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Start"
+theme_override_fonts/font = ExtResource("3_vix5y")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_lxd27")
+text = "start game"
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -427.0
+offset_top = -278.0
+offset_right = 427.0
+offset_bottom = -180.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_23cny")
+theme_override_font_sizes/font_size = 81
+text = "the way we live"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8kvv1mxuqncn"]
 
 [ext_resource type="Script" path="res://components/Player.tscn.gd" id="1_djn0p"]
-[ext_resource type="Texture2D" uid="uid://cm753c4k8suno" path="res://assets/player_r.png" id="3_hyyh4"]
+[ext_resource type="Texture2D" uid="uid://bs6410xyvvumj" path="res://assets/chara-fall.png" id="2_wrv2q"]
 [ext_resource type="PackedScene" uid="uid://bh4tsucf6r8pf" path="res://components/ChoicesBox.tscn" id="3_v1sd2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_binqq"]
@@ -17,7 +17,7 @@ script = ExtResource("1_djn0p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_hyyh4")
+texture = ExtResource("2_wrv2q")
 
 [node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -6.5)
