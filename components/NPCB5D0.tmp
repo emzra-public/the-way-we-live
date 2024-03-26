@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bslrbnyuw2rvm"]
+[gd_scene load_steps=9 format=3 uid="uid://bslrbnyuw2rvm"]
 
 [ext_resource type="Script" path="res://components/NPCharacter.tscn.gd" id="1_dik1x"]
 [ext_resource type="Texture2D" uid="uid://fntfr1msklia" path="res://assets/ph_vengeful_spirit.png" id="1_pfjb2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dvyoh1wb3oj3r" path="res://assets/tooltip.png" id="3_338x4"]
 [ext_resource type="Texture2D" uid="uid://bb34nirqaxb6t" path="res://assets/tooltip_now.png" id="4_qmmkh"]
 [ext_resource type="Texture2D" uid="uid://cfwt1uvnkd646" path="res://assets/dialog_box_arrow.png" id="7_jrtvq"]
+[ext_resource type="PackedScene" uid="uid://bh4tsucf6r8pf" path="res://components/ChoicesBox.tscn" id="7_qd21v"]
 
 [node name="NPCharacter" type="Node2D"]
 script = ExtResource("1_dik1x")
@@ -29,6 +30,12 @@ texture = ExtResource("3_338x4")
 [node name="TooltipInteractableNow" type="Sprite2D" parent="InteractPoint"]
 position = Vector2(0, -143.5)
 texture = ExtResource("4_qmmkh")
+
+[node name="ChoicesBox" parent="." instance=ExtResource("7_qd21v")]
+offset_left = -8.0
+offset_top = 82.0
+offset_right = 8.0
+offset_bottom = 98.0
 
 [node name="DialogBox" parent="." instance=ExtResource("3_4ki1v")]
 anchors_preset = 8

@@ -1,5 +1,8 @@
 extends Node
 
+signal GIVE_CHOICES(current_line)
+signal CHOSE_CHOICE(index)
+
 var player_strength = 0
 var boss_strength = 0
 

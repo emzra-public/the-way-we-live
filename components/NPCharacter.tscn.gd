@@ -1,15 +1,16 @@
 extends Node2D
 
 @onready var DialogBox = $DialogBox
+@onready var ChoicesBox = $ChoicesBox
 @onready var InteractPoint = $InteractPoint
 @onready var TooltipInteractableNow = $InteractPoint/TooltipInteractableNow
 
 signal BEGIN_DIALOG
-signal END_DIALOG
 
 var file = FileAccess.open("res://assets/dialogue.json", FileAccess.READ)
 var all_text = JSON.parse_string(file.get_as_text())
 var current_block = []
+var responses = []
 var dialog_locked = false
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +18,15 @@ func _ready():
 	DialogBox.visible = false
 	TooltipInteractableNow.visible = false
 	BEGIN_DIALOG.connect(on_display_dialog)
+	DialogBox.DONE.connect(on_done_dialog)
+	G_Player.CHOSE_CHOICE.connect(on_done_choice)
+
+func on_done_dialog():
+	dialog_locked = false
+func on_done_choice(index):
+	dialog_locked = false
+	set_current_block(responses[index])
+	on_display_dialog()
 
 func _on_interact_point_area_entered(area):
 	TooltipInteractableNow.visible = true
@@ -34,10 +44,10 @@ func on_display_dialog(text_key = null):
 		return
 	if current_block.size() == 0:
 		DialogBox.reset()
+		dialog_locked = false
 		InteractPoint.visible = true
 		get_tree().paused = false
 		return
-
 	var current_line = current_block.pop_front()
 
 	if typeof(current_line) == TYPE_STRING:
@@ -49,16 +59,13 @@ func on_display_dialog(text_key = null):
 			command.call()
 			on_display_dialog()
 		else:
+			dialog_locked = true
 			DialogBox.show_text(current_line)
 
 	elif typeof(current_line) == TYPE_DICTIONARY:
 		dialog_locked = true
-		var callback = func(response):
-			dialog_locked = false
-			DialogBox.reset()
-			set_current_block(response)
-			on_display_dialog()
-		DialogBox.show_choices(callback, current_line.keys(), current_line.values())
+		responses = current_line.values()
+		G_Player.GIVE_CHOICES.emit(current_line.keys())
 
 func set_current_block(block):
 	current_block = block
