@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bbt1eaws8pqgh"
-path="res://.godot/imported/Urbanist-Medium.ttf-d740417b311821b1e710edf30d588137.fontdata"
+path="res://.godot/imported/Urbanist-Medium.ttf-628e57e89150fdf150bfc6f50db76492.fontdata"
 
 [deps]
 
-source_file="res://Assets/Urbanist-Medium.ttf"
-dest_files=["res://.godot/imported/Urbanist-Medium.ttf-d740417b311821b1e710edf30d588137.fontdata"]
+source_file="res://assets/Urbanist-Medium.ttf"
+dest_files=["res://.godot/imported/Urbanist-Medium.ttf-628e57e89150fdf150bfc6f50db76492.fontdata"]
 
 [params]
 

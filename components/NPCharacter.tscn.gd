@@ -11,6 +11,7 @@ var all_text = JSON.parse_string(file.get_as_text())
 var current_block = []
 var responses = []
 var dialog_locked = false
+var finished_talking = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,12 +35,14 @@ func _on_interact_point_area_exited(area):
 	TooltipInteractableNow.visible = false
 
 func on_display_dialog(text_key = null):
+	if finished_talking:
+		return
 	if DialogBox.visible != true and text_key:
 		set_current_block(all_text[text_key])
 		get_tree().paused = true
 		DialogBox.visible = true
 		InteractPoint.visible = false
-	if dialog_locked == true:
+	if dialog_locked:
 		return
 	if current_block.size() == 0:
 		DialogBox.reset()
@@ -47,6 +50,8 @@ func on_display_dialog(text_key = null):
 		InteractPoint.visible = true
 		if get_tree() != null:
 			get_tree().paused = false
+		finished_talking = true
+		InteractPoint.visible = false
 		return
 	var current_line = current_block.pop_front()
 
