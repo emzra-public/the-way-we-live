@@ -3,10 +3,10 @@
 		"...hm?",
 		{
 			"Where is this place?": [
-				"Well, you're in the endless ocean of Dukkha.",
-				"For where exactly we are... I do not know.",
-				"This is one realm for you to wander and build your next life.",
-				"This is the process of wandering and suffering we call samsara.",
+				"Well, you're in the endless \n ocean of Dukkha.",
+				"For where exactly we are... \n I do not know.",
+				"This is one realm for you to wander \n and build your next life.",
+				"This is the process of wandering \n and suffering we call samsara.",
 				{
 					"Who are you?": "@second",
 					"How do I get out of here?": "@third",
@@ -17,41 +17,98 @@
 	],
 	"second": [
 		"I am Naraka, a farmer.",
-		"Finding substenance here is a challenge and I have chosen to grow foods myself.",
-		"The soil is arid and water is hard to come by",
-		"but I have gained knowledge from being here for over 300 years.",
-		"My biggest challenge is now fending off all the hungry spirits who try to steal my food..."
+		"Finding substenance here is \n a challenge and I have chosen to \n grow foods myself.",
+		"The soil is arid and water is \n hard to come by",
+		"but I have gained knowledge from \n being here for over 300 years.",
+		"My biggest challenge is now fending \n off all the hungry spirits who \n try to steal my food..."
 	],
 	"third": [
-		"You can spend an eternity searching for an answer to this question.",
-		"I have seen many start their journey here and continue their descent.",
-		"Some returned, but many more I have never seen again.",
-		"It seems an end is possible, though the journey there seems a mystery.",
-		"Explore and maybe you may find that your questions are answered..."
+		"You can spend an eternity searching \n for an answer to this question.",
+		"I have seen many start their journey \n here and continue their descent.",
+		"Some returned, but many more \n I have never seen again.",
+		"It seems an end is possible, \n though the journey there seems a mystery.",
+		"Explore and maybe you may find \n that your questions are answered..."
 	],
 	"fourth": [
-		"Not much of a talking type, I see..."
+		"Not much of a talking type, I see...",
+		{
+			"...": "@fifth"
+		}
 	],
 	"fifth": [
-		"My resources are very limited and I do not wish to extend goodwill for no benefit of my own.",
-		"I can already see that you are injured and are of no use to me.",
+		"My resources are very limited and I \n do not wish to extend goodwill \n for no benefit of my own.",
+		"I can already see that you are \n injured and are of no use to me.",
 		"... However...",
-		"My arms and legs are failing me and I no longer have the strength to fetch water.",
-		"Help bring water from the peaks of the mountain.",
-		"The hike is ong, but I am sure you are fit to do it.",
-		"Only then will I share the remnants of my food with you.",
+		"My arms and legs are failing \n me and I no longer have the \n strength to fetch water.",
+		"Help bring water from \n the peaks of the mountain.",
+		"The hike is long, but I am \n sure you are fit to do it.",
+		"Only then will I share the \n remnants of my food with you.",
 		{
-			"Accept quest": "@sixth",
-			"Refuse quest and walk away": "@seventh",
-			"Attack Nāraka and steal their food": "@eighth"
+			"Accept quest": "$accepted_quest",
+			"Refuse quest and walk away": "$refused_quest",
+			"Attack Nāraka and steal their food": "$attack_and_steal"
 		}
 	],
 	"sixth": [
 		"This spring is ours!",
-		"You are attempting to steal our water!",
+		"You are attempting to \n steal our water!",
+		"We really ought to steal back \n from the farmer instead!",
 		{
-			
+			"I don't think that's the right solution": "$discourage_spirits",
+			"Yeah, maybe you should": "$encourage_spirits"
+		}
+	],
+	"seventh": [
+		"Who are you and what are \n you doing in our spring?",
+		"You better not try and steal \n any of our water like the others!",
+		{
+			"Tell truth: wanderer": "$tell_truth_to_spirits" ,
+			"Lie: I know the farmer": "$lie_to_spirits"
+		}
+	],
+	"eighth": [
+		"Who are you and what are \n you doing in our spring?",
+		"You better not try and steal \n any of our water like the others!", 
+		"Do you have any food?",
+		{
+			"Lie: I know farmer":  "$lie_to_spirits_2",
+			"Lie I refuse to share food with you" : "$refuse_to_share_with_spirits",
+		},
+	],
+	"ninth": [
+		"Good work. Next Realm.",
+		{
+			"Rebirth": "$rebirth"
+		}
+	],
+	"tenth": [
+		"Mostly good! Try again",
+		{
+			"Rebirth": "$rebirth"
+		}
+	],
+	"eleventh": [
+		"Mostly good! Try again",
+		{
+			"Rebirth": "$rebirth"
+		}
+	],
+	"twelfth": [
+		"Not bad, not good ):",
+		{
+			"Rebirth": "$rebirth"
+		}
+	],
+	"thirteenth": [
+		"Not bad, not good ):",
+		{
+			"Rebirth": "$rebirth"
+		}
+	],
+	"fourteenth": [
+		"ur a jerk",
+		{
+			"Rebirth": "$rebirth"
 		}
 	]
-	
 }
