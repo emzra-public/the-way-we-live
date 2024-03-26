@@ -46,4 +46,5 @@ grow_vertical = 2
 [connection signal="area_entered" from="InteractPoint" to="." method="_on_interact_point_area_entered"]
 [connection signal="area_exited" from="InteractPoint" to="." method="_on_interact_point_area_exited"]
 
+[editable path="InteractPoint"]
 [editable path="DialogBox"]

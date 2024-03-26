@@ -103,11 +103,3 @@ func restart_game():
 func rebirth():
 	reset_dialogue_variables()
 	get_tree().change_scene_to_file("res://Level1.tscn")
-
-func arrived():
-	has_arrived = true
-
-func naraka():
-	if has_arrived:
-		return "first.2"
-	return "first"
