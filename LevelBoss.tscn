@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl5c8eg8i4qvn"]
+[gd_scene load_steps=8 format=3 uid="uid://dl5c8eg8i4qvn"]
 
 [ext_resource type="PackedScene" uid="uid://b8kvv1mxuqncn" path="res://components/Player.tscn" id="1_gjney"]
 [ext_resource type="Texture2D" uid="uid://b5cpqci80d1gd" path="res://Assets/boss.jpg" id="2_0q6pm"]
+[ext_resource type="PackedScene" uid="uid://bslrbnyuw2rvm" path="res://components/NPCharacter.tscn" id="3_o1kub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlwo0"]
-size = Vector2(28.4513, 815.5)
+size = Vector2(32.5551, 815.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlbpi"]
 size = Vector2(14.0959, 1338)
@@ -12,26 +13,38 @@ size = Vector2(14.0959, 1338)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hpgg"]
 size = Vector2(25.2378, 1178)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ism8m"]
+size = Vector2(1705, 614.5)
+
 [node name="Scene2" type="Node2D"]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_gjney")]
 position = Vector2(578, 339)
 
+[node name="ChoicesBox" parent="PlayerCharacter" index="5"]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(880, 1612)
+position = Vector2(799, 31)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(43, 725)
+position = Vector2(-105, 882)
 scale = Vector2(34.48, 1)
 shape = SubResource("RectangleShape2D_vlwo0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(890, 56)
+position = Vector2(629, 139)
 scale = Vector2(34.48, 1)
 shape = SubResource("RectangleShape2D_dlbpi")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-825, 148)
+position = Vector2(-1016, 152)
 scale = Vector2(34.48, 1)
 shape = SubResource("RectangleShape2D_0hpgg")
 
@@ -42,5 +55,43 @@ position = Vector2(880, 623)
 motion_scale = Vector2(0.25, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
-scale = Vector2(0.5, 0.5)
+position = Vector2(-117.5, -428)
+scale = Vector2(0.434721, 0.428226)
 texture = ExtResource("2_0q6pm")
+
+[node name="NPCharacter" parent="." instance=ExtResource("3_o1kub")]
+position = Vector2(870, 533)
+
+[node name="Sprite2D" parent="NPCharacter" index="0"]
+texture = null
+
+[node name="Sprite2D2" parent="NPCharacter" index="1"]
+visible = false
+position = Vector2(66.75, -123.75)
+scale = Vector2(4.60811, 1.33784)
+
+[node name="InteractPoint" parent="NPCharacter" index="2"]
+position = Vector2(-13, 6)
+dialog_key = "$boss"
+
+[node name="CollisionShape2D" parent="NPCharacter/InteractPoint" index="0"]
+position = Vector2(-81, -218)
+shape = SubResource("RectangleShape2D_ism8m")
+
+[node name="TooltipInteractable" parent="NPCharacter/InteractPoint" index="1"]
+texture = null
+
+[node name="TooltipInteractableNow" parent="NPCharacter/InteractPoint" index="2"]
+texture = null
+
+[node name="DialogBox" parent="NPCharacter" index="3"]
+offset_left = -385.0
+offset_top = -490.0
+offset_right = 193.0
+offset_bottom = -411.0
+
+[editable path="PlayerCharacter"]
+[editable path="PlayerCharacter/ChoicesBox"]
+[editable path="NPCharacter"]
+[editable path="NPCharacter/InteractPoint"]
+[editable path="NPCharacter/DialogBox"]

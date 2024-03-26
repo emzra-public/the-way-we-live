@@ -7,7 +7,11 @@
 				"For where exactly we are... \n I do not know.",
 				"This is one realm for you to wander \n and build your next life.",
 				"This is the process of wandering \n and suffering we call samsara.",
-				"@first.1"
+				{
+					"Who are you?": "@second",
+					"How do I get out of here?": "@third",
+					"Skip.": "@fourth"
+				}
 			]
 		}
 	],
@@ -15,7 +19,7 @@
 		{
 					"Who are you?": "@second",
 					"How do I get out of here?": "@third",
-					"I don't have any other questions to ask you.": "@fourth"
+					"Skip.": "@fourth"
 		}
 	],
 	"second": [
@@ -25,7 +29,7 @@
 		"but I have gained knowledge from \n being here for over 300 years.",
 		"My biggest challenge is now fending \n off all the hungry spirits who \n try to steal my food...",
 		{
-			"Nice": "@first.1"
+			"...": "@first.1"
 		}
 	],
 	"third": [
@@ -33,10 +37,7 @@
 		"I have seen many start their journey \n here and continue their descent.",
 		"Some returned, but many more \n I have never seen again.",
 		"It seems an end is possible, \n though the journey there seems a mystery.",
-		"Explore and maybe you may find \n that your questions are answered...",
-		{
-			"Nice": "@first.1"
-		}
+		"Explore and maybe you may find \n that your questions are answered..."
 	],
 	"fourth": [
 		"Not much of a talking type, I see...",
